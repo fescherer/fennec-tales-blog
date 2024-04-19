@@ -1,11 +1,10 @@
 /* eslint-disable jsx-a11y/alt-text */
 /* eslint-disable @next/next/no-img-element */
 import type { MDXComponents } from 'mdx/types'
-import { Link as PrimitiveLink } from './components/Link'
-import { Pre } from './components/MdxComponents'
 import { DetailedHTMLProps, ImgHTMLAttributes } from 'react'
 import Link from 'next/link'
 import { slugyfy } from './utils/slugfy'
+import { Pre, Link as PrimitiveLink } from './components'
 
 interface IImg extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   source?: string

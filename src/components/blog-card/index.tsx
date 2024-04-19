@@ -18,7 +18,7 @@ export function BlogCard({ orientation = 'horizontal' }: BlogCardProps) {
           <p className="line-clamp-3">his blog post is my journey into Game Off 2023 by Github and Lee Reilly,  started on November 01 and ended December 01. It&apos;s my very first big  game project, I am so exited! I will update this page every day, telling  what I did and</p>
         </div>
 
-        <div className="h-1 w-full border-b border-black" />
+        <div className="border-black h-1 w-full border-b" />
 
         <div className="flex justify-between">
           <span>Nov 10</span>

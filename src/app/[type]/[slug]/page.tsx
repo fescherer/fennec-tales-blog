@@ -1,4 +1,4 @@
-import { getPostData } from '@/utils/functions/getPostData'
+import { getPostData } from '@/utils/post-functions/getPostData'
 import dynamic from 'next/dynamic'
 
 type SlugPageParams = {
@@ -11,10 +11,10 @@ type SlugPageProps = {
 }
 
 export default async function SlugPage({ params: { slug, type } }: SlugPageProps) {
-  const article = await getPostData(type, slug)
+  const post = await getPostData(type, slug)
 
   const MarkdownContent = dynamic(
-    () => import(`@/blog/${article.category}/${article.slug}.mdx`),
+    () => import(`@/blog/${post.category}/${post.slug}.mdx`),
   )
 
   return (

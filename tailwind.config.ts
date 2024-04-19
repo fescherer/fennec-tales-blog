@@ -1,20 +1,72 @@
-import type { Config } from "tailwindcss";
+import type { Config } from 'tailwindcss'
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
   theme: {
-    extend: {
-      backgroundImage: {
-        "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+    colors: {
+      primary: {
+        // Background 1 color
+        DEFAULT: '#0E1716',
+        active: '',
+        label: {
+          primary: '',
+          secondary: '',
+          tertiary: '',
+          active: '',
+        },
       },
+      secondary: {
+        // Background 2 color
+        DEFAULT: '',
+        active: '',
+        disabled: '',
+        label: {
+          primary: '',
+          secondary: '',
+          tertiary: '',
+          active: '',
+          disabled: '',
+        },
+      },
+      accent: {
+        // Brand color
+        DEFAULT: '#08fabd',
+        active: '#08faee',
+        disabled: '',
+        label: {
+          primary: '#0f0f0f',
+          secondary: '#0f0f0faa',
+          tertiary: '#0f0f0f70',
+          active: '#ff0000',
+          disabled: '',
+        },
+      },
+      feedback: {
+        info: {
+          DEFAULT: '',
+          active: '',
+          disabled: '',
+        },
+        sucess: {
+          DEFAULT: '',
+          active: '',
+          disabled: '',
+        },
+        error: {
+          DEFAULT: '',
+          active: '',
+          disabled: '',
+        },
+        warning: {
+          DEFAULT: '',
+          active: '',
+          disabled: '',
+        },
+      },
+    },
+    extend: {
     },
   },
   plugins: [],
-};
-export default config;
+}
+export default config

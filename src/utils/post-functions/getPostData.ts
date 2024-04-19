@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getPostContent } from './getPostContent'
-import type { IArticle } from '@/@types/Article'
+import type { IArticle } from '@/@types/post'
 
 /**
  * Import an mdx blog post file and return the metadata and content.

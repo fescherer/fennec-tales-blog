@@ -1,10 +1,8 @@
-import { BlogCard } from '@/components/BlogCard'
-
 export default function Home() {
   return (
-    <main className="m-10 flex flex-col gap-5">
-      <BlogCard />
-      <BlogCard orientation="vertical" />
+    <main className="">
+      <span className="text-accent hover:text-accent-active">Accent</span>
+      <button type="button" className="bg-accent text-accent-label-primary hover:bg-accent-active hover:text-accent-label-active">Button accent background and accent text colors</button>
     </main>
   )
 }

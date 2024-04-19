@@ -1,6 +1,6 @@
 import { readdirSync } from 'node:fs'
 import { getPostData } from './getPostData'
-import type { IArticle } from '@/@types/Article'
+import type { IArticle } from '@/@types/post'
 
 /**
  * import each post in blog directory and return their metadata in an array

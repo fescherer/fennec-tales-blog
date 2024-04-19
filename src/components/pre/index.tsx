@@ -1,4 +1,4 @@
-import { CopyButton } from './components'
+import { CopyBtn } from './copy-btn'
 
 export function Pre({ children, raw, ...props }: any) {
   const lang = (props['data-language']) || 'shell'
@@ -6,7 +6,7 @@ export function Pre({ children, raw, ...props }: any) {
     <pre {...props} className="my-10 max-w-full overflow-x-auto rounded-md">
       <span className="bg-code-header flex w-full justify-between px-4 py-2">
         {lang}
-        <CopyButton text={(raw as string) || ''} />
+        <CopyBtn text={(raw as string) || ''} />
       </span>
 
       <span className="p-2 ">
