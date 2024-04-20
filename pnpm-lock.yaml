@@ -11,6 +11,9 @@ dependencies:
   '@next/mdx':
     specifier: ^14.2.2
     version: 14.2.2(@mdx-js/loader@3.0.1)
+  animate.css:
+    specifier: ^4.1.1
+    version: 4.1.1
   next:
     specifier: 14.2.2
     version: 14.2.2(react-dom@18.2.0)(react@18.2.0)
@@ -847,6 +850,10 @@ packages:
       fast-json-stable-stringify: 2.1.0
       json-schema-traverse: 0.4.1
       uri-js: 4.4.1
+
+  /animate.css@4.1.1:
+    resolution: {integrity: sha512-+mRmCTv6SbCmtYJCN4faJMNFVNN5EuCTTprDTAo7YzIGji2KADmakjVA3+8mVDkZ2Bf09vayB35lSQIex2+QaQ==}
+    dev: false
 
   /ansi-escapes@6.2.1:
     resolution: {integrity: sha512-4nJ3yixlEthEJ9Rk4vPcdBRkZvQZlYyu8j4/Mqz5sgIkddmEnH2Yj2ZrnP9S3tQOvSNRUIgVNF/1yPpRAGNRig==}

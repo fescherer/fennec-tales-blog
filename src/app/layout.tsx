@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
 import './globals.css'
 import { PropsWithChildren } from 'react'
+import { Header } from '@/components/header'
+import { Footer } from '@/components/footer'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -13,7 +15,15 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
-      <body className={`${inter.className} min-h-screen bg-primary`}>{children}</body>
+      <body className={`${inter.className} flex size-full min-h-screen flex-col bg-primary text-base text-primary-label-primary`}>
+        <Header />
+
+        <main className="m-auto max-w-7xl flex-1 p-4">
+          {children}
+        </main>
+
+        <Footer />
+      </body>
     </html>
   )
 }

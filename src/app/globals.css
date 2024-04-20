@@ -1,6 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import 'animate.css';
+
+:root {
+  --animate-delay: 0.5s;
+}
 
 :root {
   --foreground-rgb: 0, 0, 0;

@@ -6,10 +6,10 @@ const config: Config = {
     colors: {
       primary: {
         // Background 1 color
-        DEFAULT: '#0E1716',
+        DEFAULT: '#080809',
         active: '',
         label: {
-          primary: '',
+          primary: '#FFFFFF',
           secondary: '',
           tertiary: '',
           active: '',
@@ -17,15 +17,15 @@ const config: Config = {
       },
       secondary: {
         // Background 2 color
-        DEFAULT: '',
+        DEFAULT: '#0E0F0F',
         active: '',
-        disabled: '',
+        disabled: '#FFFFFF44',
         label: {
-          primary: '',
-          secondary: '',
-          tertiary: '',
+          primary: '#FFFFFFdd',
+          secondary: '#FFFFFFaa',
+          tertiary: '#FFFFFF77',
           active: '',
-          disabled: '',
+          disabled: '#FFFFFF22',
         },
       },
       accent: {
@@ -63,8 +63,12 @@ const config: Config = {
           disabled: '',
         },
       },
+      transparent: 'transparent',
     },
     extend: {
+      screens: {
+        xs: '425px',
+      },
     },
   },
   plugins: [],
