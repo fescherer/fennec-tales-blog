@@ -18,7 +18,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
       <body className={`${inter.className} flex size-full min-h-screen flex-col bg-primary text-base text-primary-label-primary`}>
         <Header />
 
-        <main className="m-auto max-w-7xl flex-1 p-4">
+        <main className="m-auto max-w-4xl flex-1 p-4">
           {children}
         </main>
 

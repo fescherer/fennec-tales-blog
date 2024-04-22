@@ -1,6 +1,6 @@
 import { notFound } from 'next/navigation'
 import { getPostContent } from './getPostContent'
-import type { IArticle } from '@/@types/post'
+import { IPost } from '@/@types'
 
 /**
  * Import an mdx blog post file and return the metadata and content.
@@ -8,7 +8,7 @@ import type { IArticle } from '@/@types/post'
  * @param blogSlug
  * @returns
  */
-export async function getPostData(blogType: string, blogSlug: string): Promise<IArticle> {
+export async function getPostData(blogType: string, blogSlug: string): Promise<IPost> {
   try {
     const file = await import(`@/blog/${blogType}/${blogSlug}.mdx`)
     const postContent = await getPostContent(blogType, blogSlug)

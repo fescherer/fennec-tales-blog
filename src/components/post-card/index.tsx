@@ -3,23 +3,31 @@ import { getTimeFormated } from '@/utils/functions'
 import Image from 'next/image'
 import Link from 'next/link'
 import readingTime from 'reading-time'
+import { Ribbon } from '../ribbon'
 
 type PostCardProps = {
   post: IPost
+  text?: string
   orientation?: 'horizontal' | 'vertical'
 }
 
-export function PostCard({ post, orientation = 'horizontal' }: PostCardProps) {
+export function PostCard({ post, orientation = 'horizontal', text }: PostCardProps) {
   const classOrientation = orientation === 'vertical' ? 'flex-col' : orientation === 'horizontal' ? 'flex-row' : ''
   const publishedDate = getTimeFormated(post.updated_at ? post.updated_at : post.published_date)
   const postTime = Math.ceil(readingTime(post.content).minutes)
 
   return (
-    <Link href={`${post.category}/${post.slug}`} className={`group flex overflow-hidden rounded-sm ${classOrientation} w-full border border-transparent bg-secondary transition-all hover:border-secondary-disabled`} title={post.title}>
+    <Link href={`${post.category}/${post.slug}`} className={`group flex  rounded-sm ${classOrientation} relative w-full border border-transparent bg-secondary transition-all hover:border-secondary-disabled`} title={post.title}>
 
       <div className="overflow-hidden">
         <Image src={post.image} width={853} height={568} alt="image" className="transition-all group-hover:scale-110" />
       </div>
+
+      {text && (
+        <Ribbon
+          title={text}
+        />
+      )}
 
       <div className="flex flex-1 flex-col gap-4 p-2">
         {/* <small className="capitalize">{post.category}</small> */}
