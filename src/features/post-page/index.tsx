@@ -1,0 +1,34 @@
+import { PropsWithPost } from '@/@types'
+import { PostContent } from './post-content'
+import { PostReference } from './post-reference'
+import { PostAuthor } from './post-author'
+import { PostFeedback } from './post-feedback'
+import { PostComments } from './post-comments'
+import { RelatedPosts } from '../../components/related-posts'
+import { PostAside } from './post-aside'
+import { PostTableOfContent } from '@/components/post-table-of-content'
+import { PostHeader } from './post-header'
+
+export function PostPage({ post }: PropsWithPost) {
+  return (
+    <div className="flex flex-col-reverse gap-8 lg:flex-row">
+      <div>
+        <PostHeader post={post} />
+
+        <div className="block lg:hidden">
+          <PostTableOfContent post={post} />
+        </div>
+
+        <PostContent post={post} />
+        <PostReference post={post} />
+        <PostAuthor post={post} />
+        <PostFeedback post={post} />
+        {/* <EditThisArticle /> */}
+        <RelatedPosts post={post} />
+        <PostComments post={post} />
+      </div>
+
+      <PostAside post={post} />
+    </div>
+  )
+}

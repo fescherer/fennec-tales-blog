@@ -8,9 +8,10 @@ const config: Config = {
         // Background 1 color
         DEFAULT: '#080809',
         active: '',
+        border: '#ffffff55',
         label: {
           primary: '#FFFFFF',
-          secondary: '',
+          secondary: '#FFFFFFaa',
           tertiary: '',
           active: '',
         },

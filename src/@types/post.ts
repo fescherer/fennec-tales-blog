@@ -32,3 +32,5 @@ export interface IPostHeading {
   level: 1 | 2 | 3
   title: string
 }
+
+export type PropsWithPost<P = unknown> = P & { post: IPost }
