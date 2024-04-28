@@ -11,24 +11,31 @@ import { PostHeader } from './post-header'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
-    <div className="flex flex-col-reverse gap-8 lg:flex-row">
-      <div>
-        <PostHeader post={post} />
+    <div className="">
+      <div
+        style={{ backgroundImage: `url(${post.image})` }}
+        className="absolute left-0 top-0 -z-10 h-1/2 max-h-80 w-full bg-cover blur-sm brightness-75"
+      />
 
-        <div className="block lg:hidden">
-          <PostTableOfContent post={post} />
+      <div className="z-10 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
+        <div>
+          <PostHeader post={post} />
+
+          <div className="block lg:hidden">
+            <PostTableOfContent post={post} />
+          </div>
+
+          <PostContent post={post} />
+          <PostReference post={post} />
+          <PostAuthor post={post} />
+          <PostFeedback post={post} />
+          {/* <EditThisArticle /> */}
+          <RelatedPosts post={post} />
+          <PostComments post={post} />
         </div>
 
-        <PostContent post={post} />
-        <PostReference post={post} />
-        <PostAuthor post={post} />
-        <PostFeedback post={post} />
-        {/* <EditThisArticle /> */}
-        <RelatedPosts post={post} />
-        <PostComments post={post} />
+        <PostAside post={post} />
       </div>
-
-      <PostAside post={post} />
     </div>
   )
 }
