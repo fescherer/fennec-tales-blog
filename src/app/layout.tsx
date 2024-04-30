@@ -15,6 +15,13 @@ export const metadata: Metadata = {
 export default function RootLayout({ children }: PropsWithChildren) {
   return (
     <html lang="en">
+      <head>
+        <link
+          href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet"
+        />
+      </head>
+
       <body className={`${inter.className} flex size-full min-h-screen flex-col bg-primary text-base text-primary-label-primary`}>
         <Header />
 

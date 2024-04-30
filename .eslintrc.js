@@ -29,6 +29,11 @@ module.exports = {
         allowMultilines: true,
       },
     ],
+    // 'tailwindcss/no-custom-classname': [
+    //   'warn', {
+    //     whitelist: ['material-icons'],
+    //   },
+    // ],
     'react/button-has-type': ['error'],
     '@stylistic/jsx-self-closing-comp': ['error'],
   },

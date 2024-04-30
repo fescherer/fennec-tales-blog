@@ -1,7 +1,9 @@
 import type { Config } from 'tailwindcss'
+import plugin from 'tailwindcss/plugin'
 
 const config: Config = {
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
+  safelist: ['material-icons'],
   theme: {
     colors: {
       primary: {
@@ -72,6 +74,36 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    plugin(function ({ addComponents }) {
+      addComponents({
+        '.mui-icon-filled': {
+          fontFamily: 'Material Icons',
+          fontWeight: 'normal',
+          fontStyle: 'normal',
+          fontSize: '24px', /* Preferred icon size */
+          display: 'inline-block',
+          lineHeight: '1',
+          textTransform: 'none',
+          letterSpacing: 'normal',
+          wordWrap: 'normal',
+          whiteSpace: 'nowrap',
+          direction: 'ltr',
+
+          /* Support for all WebKit browsers. */
+          WebkitFontSmoothing: 'antialiased',
+          /* Support for Safari and Chrome. */
+          textRendering: 'optimizeLegibility',
+
+          /* Support for Firefox. */
+          MozOsxFontSmoothing: 'grayscale',
+
+          /* Support for IE. */
+          fontFeatureSettings: 'liga',
+
+        },
+      })
+    }),
+  ],
 }
 export default config
