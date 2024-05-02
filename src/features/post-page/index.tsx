@@ -11,7 +11,7 @@ import { PostHeader } from './post-header'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
-    <div className="">
+    <div className="m-auto max-w-5xl">
       <div
         style={{ backgroundImage: `url(${post.image})` }}
         className="absolute left-0 top-0 -z-10 h-1/2 max-h-80 w-full bg-cover blur-sm brightness-75"

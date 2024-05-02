@@ -22,7 +22,8 @@
     "rehype-pretty-code": "^0.13.1",
     "rehype-slug": "^6.0.0",
     "remark-gfm": "^4.0.0",
-    "tailwind-merge": "^2.3.0"
+    "tailwind-merge": "^2.3.0",
+    "vaul": "^0.9.0"
   },
   "devDependencies": {
     "@stylistic/eslint-plugin": "^1.7.2",
