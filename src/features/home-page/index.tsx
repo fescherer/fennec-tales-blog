@@ -9,7 +9,6 @@ export async function HomePage() {
   const filteredPosts = posts.filter(post => post.slug !== latestPost.slug)
 
   return (
-  // <div className="grid size-full grid-cols-[216px,1fr] gap-3">
     <div className="flex gap-2">
       <Menu className="hidden md:block" />
 
@@ -18,10 +17,10 @@ export async function HomePage() {
           <PostCard text="Latest" post={latestPost} />
 
           {
-        filteredPosts.map(post => (
-          <PostCard key={post.slug} post={post} />
-        ))
-      }
+            filteredPosts.map(post => (
+              <PostCard key={post.slug} post={post} />
+            ))
+          }
         </div>
       </div>
 
