@@ -1,5 +1,6 @@
 import type { Config } from 'tailwindcss'
 import plugin from 'tailwindcss/plugin'
+import defaultTheme from 'tailwindcss/defaultTheme'
 
 const config: Config = {
   content: ['./src/**/**/*.{js,ts,jsx,tsx,mdx}'],
@@ -9,25 +10,26 @@ const config: Config = {
       primary: {
         // Background 1 color
         DEFAULT: '#080809',
-        active: '',
+        active: 'red',
         border: '#ffffff55',
         label: {
           primary: '#FFFFFF',
           secondary: '#FFFFFFaa',
-          tertiary: '',
-          active: '',
+          tertiary: '#FFFFFF77',
+          active: '#FFFFFF',
+          disabled: '#FFFFFF22',
         },
       },
       secondary: {
         // Background 2 color
         DEFAULT: '#0E0F0F',
-        active: '',
+        active: 'blue',
         disabled: '#FFFFFF44',
         label: {
           primary: '#FFFFFFdd',
           secondary: '#FFFFFFaa',
           tertiary: '#FFFFFF77',
-          active: '',
+          active: '#FFFFFF',
           disabled: '#FFFFFF22',
         },
       },
@@ -35,13 +37,13 @@ const config: Config = {
         // Brand color
         DEFAULT: '#08fabd',
         active: '#08faee',
-        disabled: '',
+        disabled: '#FFFFFF22',
         label: {
           primary: '#0f0f0f',
           secondary: '#0f0f0faa',
           tertiary: '#0f0f0f70',
           active: '#ff0000',
-          disabled: '',
+          disabled: '#FFFFFF22',
         },
       },
       feedback: {
@@ -67,6 +69,11 @@ const config: Config = {
         },
       },
       transparent: 'transparent',
+    },
+    fontFamily: {
+      satoshi: ['Satoshi', 'sans-serif', ...defaultTheme.fontFamily.sans],
+      cabinetGrotesk: ['Cabinet Grotesk', 'serif', ...defaultTheme.fontFamily.sans],
+
     },
     extend: {
       screens: {
