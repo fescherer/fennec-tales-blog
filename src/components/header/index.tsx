@@ -12,7 +12,7 @@ export function Header() {
           <Link href="/">Logo</Link>
         </div>
 
-        <SearchInput className="hidden items-center md:flex md:w-36" />
+        <SearchInput className="hidden items-center md:flex md:w-64" />
 
         <div className="flex gap-1">
           <ThemeBtn />

@@ -1,5 +1,4 @@
 import { getAllCategories } from '@/utils/functions'
-import { getPostsData } from '@/utils/post-functions'
 import Link from 'next/link'
 
 interface AllCategoriesProps {
@@ -7,8 +6,7 @@ interface AllCategoriesProps {
 }
 
 export async function AllCategories({ selectedCategory }: AllCategoriesProps) {
-  const articles = await getPostsData()
-  const allcategories = getAllCategories(articles)
+  const allcategories = await getAllCategories()
 
   return (
     <div title="All categories">

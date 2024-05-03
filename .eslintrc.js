@@ -29,11 +29,12 @@ module.exports = {
         allowMultilines: true,
       },
     ],
-    // 'tailwindcss/no-custom-classname': [
-    //   'warn', {
-    //     whitelist: ['material-icons'],
-    //   },
-    // ],
+    'tailwindcss/no-custom-classname': [
+      'warn', {
+        // whitelist: ['material-icons'],
+        whitelist: ['animate__.*'],
+      },
+    ],
     'react/button-has-type': ['error'],
     '@stylistic/jsx-self-closing-comp': ['error'],
   },

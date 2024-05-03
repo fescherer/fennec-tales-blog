@@ -58,7 +58,7 @@ const config: Config = {
           disabled: '',
         },
         error: {
-          DEFAULT: '',
+          DEFAULT: '#ff0000',
           active: '',
           disabled: '',
         },

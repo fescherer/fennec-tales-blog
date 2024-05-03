@@ -1,11 +1,9 @@
 import type { Metadata } from 'next'
-import { Inter } from 'next/font/google'
 import './globals.css'
 import { PropsWithChildren } from 'react'
 import { Header } from '@/components/header'
 import { Footer } from '@/components/footer'
-
-const inter = Inter({ subsets: ['latin'] })
+import { montserrat } from './ui'
 
 export const metadata: Metadata = {
   title: 'Fennec Tales Blog',
@@ -22,7 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
 
-      <body className={`${inter.className} flex size-full min-h-screen flex-col bg-primary text-base text-primary-label-primary`}>
+      <body className={`${montserrat.className} flex size-full min-h-screen flex-col bg-primary text-base text-primary-label-primary`}>
         <Header />
 
         <main className="flex-1 p-4 pt-[90px] md:pt-[66px]">

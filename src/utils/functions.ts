@@ -1,4 +1,5 @@
 import { IPost, IRecommendedPost } from '@/@types'
+import { getPostsData } from './post-functions'
 
 export function getTimeFormated(dateString: string) {
   const date = new Date(dateString)
@@ -30,9 +31,11 @@ export function getRecommendedPosts(post: IPost, allPost: IPost[]): IRecommended
   return sorted.slice(0, 3)
 }
 
-export function getAllTags(allPost: IPost[]) {
+export async function getAllTags() {
+  const posts = await getPostsData()
+
   const contentField: string[] = []
-  allPost.forEach((post) => {
+  posts.forEach((post) => {
     post.tags.forEach((tag) => {
       if (!contentField.includes(tag))
         contentField.push(tag)
@@ -41,9 +44,11 @@ export function getAllTags(allPost: IPost[]) {
   return contentField
 }
 
-export function getAllCategories(allPost: IPost[]) {
+export async function getAllCategories() {
+  const posts = await getPostsData()
+
   const contentField: string[] = []
-  allPost.forEach((post) => {
+  posts.forEach((post) => {
     if (!contentField.includes(post.category))
       contentField.push(post.category)
   })

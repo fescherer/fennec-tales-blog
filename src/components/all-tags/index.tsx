@@ -1,5 +1,4 @@
 import { getAllTags } from '@/utils/functions'
-import { getPostsData } from '@/utils/post-functions'
 import Link from 'next/link'
 
 interface AllTagsProps {
@@ -7,8 +6,7 @@ interface AllTagsProps {
 }
 
 export async function AllTags({ selectedTag }: AllTagsProps) {
-  const articles = await getPostsData()
-  const alltags = getAllTags(articles)
+  const alltags = await getAllTags()
 
   return (
     <div title="All tags">
