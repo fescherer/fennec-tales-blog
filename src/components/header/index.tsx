@@ -5,7 +5,7 @@ import { SearchInput } from './search-input'
 
 export function Header() {
   return (
-    <header className="fixed z-50 w-full bg-secondary p-2 md:p-4">
+    <header className="fixed z-50 w-full bg-primary p-2 md:p-4">
       <div className="flex w-full justify-between">
         <div className="flex items-center gap-1">
           <MenuBtn />

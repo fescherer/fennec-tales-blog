@@ -1,7 +1,10 @@
-import { HomePage } from '@/features/home-page'
+import { PostList } from '@/features/post-list'
+import { getPostsData, sortPosts } from '@/utils/post-functions'
 
 export default async function Home() {
+  const posts = (await getPostsData()).sort(sortPosts)
+
   return (
-    <HomePage />
+    <PostList posts={posts} type="" />
   )
 }

@@ -88,6 +88,9 @@ devDependencies:
   postcss:
     specifier: ^8
     version: 8.4.38
+  schema-dts:
+    specifier: ^1.1.2
+    version: 1.1.2(typescript@5.4.5)
   simple-git-hooks:
     specifier: ^2.11.1
     version: 2.11.1
@@ -4456,6 +4459,14 @@ packages:
     dependencies:
       loose-envify: 1.4.0
     dev: false
+
+  /schema-dts@1.1.2(typescript@5.4.5):
+    resolution: {integrity: sha512-MpNwH0dZJHinVxk9bT8XUdjKTxMYrA5bLtrrGmFA6PTLwlOKnhi67XoRd6/ty+Djt6ZC0slR57qFhZDNMI6DhQ==}
+    peerDependencies:
+      typescript: '>=4.1.0'
+    dependencies:
+      typescript: 5.4.5
+    dev: true
 
   /schema-utils@3.3.0:
     resolution: {integrity: sha512-pN/yOAvcC+5rQ5nERGuwrjLlYvLTbCibnZ1I7B1LaiAz9BRBlE9GMgE/eqV30P7aJQUf7Ddimy/RsbYO/GrVGg==}

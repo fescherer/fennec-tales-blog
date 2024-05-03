@@ -3,6 +3,7 @@ export const DATA = {
   appName: 'Blog Fennec Tales',
   repo: 'https://github.com/fescherer/blog',
   rss: 'https://blog.felipescherer.com/feed.xml',
+  company: 'Fennec Tales Studio',
 }
 
 export const METADATA = {
