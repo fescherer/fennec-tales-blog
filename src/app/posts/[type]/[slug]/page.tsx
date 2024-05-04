@@ -32,13 +32,13 @@ export async function generateMetadata(
   return {
     title: data.title,
     alternates: {
-      canonical: `${METADATA.canonical_url}/${type}/${slug}`,
+      canonical: `${METADATA.canonical_url}/posts/${type}/${slug}`,
     },
 
     openGraph: {
       title: `${data.title} | ${METADATA.title}`,
       description: data.content.slice(0, 90).trim(),
-      url: `${METADATA.canonical_url}/${type}/${slug}`,
+      url: `${METADATA.canonical_url}/posts/${type}/${slug}`,
       siteName: METADATA.title,
       images: [
         {
@@ -68,7 +68,7 @@ function getJSONLD(doc: IPost, type: string, slug: string) {
   return getArticleJSONLD({
     '@type': 'Article',
     'headline': doc.title,
-    'url': `${METADATA.canonical_url}/${type}/${slug}`,
+    'url': `${METADATA.canonical_url}/posts/${type}/${slug}`,
     'datePublished': doc.published_date,
     'dateModified': doc.updated_at,
     'image': {
@@ -81,7 +81,7 @@ function getJSONLD(doc: IPost, type: string, slug: string) {
     'description': doc.content.slice(0, 90).trim(),
     'mainEntityOfPage': {
       '@type': 'WebPage',
-      '@id': `${METADATA.canonical_url}/${type}/${slug}`,
+      '@id': `${METADATA.canonical_url}/posts/${type}/${slug}`,
     },
     'author': {
       '@type': 'Person',

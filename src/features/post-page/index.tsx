@@ -11,13 +11,13 @@ import { PostHeader } from './post-header'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
-    <div className="m-auto max-w-5xl">
+    <div className="m-auto max-w-6xl">
       <div
         style={{ backgroundImage: `url(${post.image})` }}
-        className="absolute left-0 top-0 -z-10 h-1/2 max-h-80 w-full bg-cover blur-sm brightness-75"
+        className="absolute left-0 top-0 -z-10 h-1/2 w-full bg-cover blur-sm brightness-75"
       />
 
-      <div className="z-10 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
+      <div className="z-10 mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
         <div>
           <PostHeader post={post} />
 

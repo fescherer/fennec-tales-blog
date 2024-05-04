@@ -16,7 +16,7 @@ export async function AllCategories({ selectedCategory }: AllCategoriesProps) {
             <Link
               aria-label={`Remove category filter for ${category}`}
               target="_self"
-              href={category === selectedCategory ? '/' : `/${category}`}
+              href={category === selectedCategory ? '/' : `/posts/${category}`}
             >
               {category}
             </Link>

@@ -6,7 +6,7 @@ export default async function Sitemap() {
   const articles = await getPostsData()
 
   const posts = articles.map(post => ({
-    url: `${METADATA.canonical_url}/${post.category}/${post.slug}`,
+    url: `${METADATA.canonical_url}/posts/${post.category}/${post.slug}`,
     lastModified: post.updated_at,
   }))
 
@@ -16,7 +16,7 @@ export default async function Sitemap() {
   }))
 
   const categories = (await getAllCategories()).map(category => ({
-    url: `${METADATA.canonical_url}/${category}`,
+    url: `${METADATA.canonical_url}/posts/${category}`,
     lastModified: new Date(),
   }))
 

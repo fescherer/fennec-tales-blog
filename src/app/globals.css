@@ -78,7 +78,6 @@ a:focus-visible {
     .styled-scrollbars {
       scrollbar-color: #47484baa transparent;
       scrollbar-width: thin;
-      border-radius: 8px;
       transition: cubic-bezier(0.165, 0.84, 0.44, 1) 500ms all;
     }
 
@@ -88,7 +87,6 @@ a:focus-visible {
 
     .styled-scrollbars:hover::-webkit-scrollbar-thumb {
       background: #47484b;
-      border-radius: 8px;
       -ms-overflow-style: none;
       scrollbar-width: thin;
     }

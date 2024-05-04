@@ -30,9 +30,9 @@ export async function generateRss() {
   articles.map((post) => {
     return feed.addItem({
       title: post.title,
-      id: `${METADATA.canonical_url}/${post.category}/${post.slug}`,
-      guid: `${METADATA.canonical_url}/${post.category}/${post.slug}`,
-      link: `${METADATA.canonical_url}/${post.category}/${post.slug}`,
+      id: `${METADATA.canonical_url}/posts/${post.category}/${post.slug}`,
+      guid: `${METADATA.canonical_url}/posts/${post.category}/${post.slug}`,
+      link: `${METADATA.canonical_url}/posts/${post.category}/${post.slug}`,
       date: new Date(post.published_date),
       description: post.content.slice(0, 300),
       author: [{ name: post.author, link: AUTHORS_DATA[0].profiles[0].url, email: AUTHORS_DATA[0].profiles[0].url }],

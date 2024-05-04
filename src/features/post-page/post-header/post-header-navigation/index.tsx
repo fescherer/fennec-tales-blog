@@ -7,15 +7,15 @@ export function PostHeaderNavigation({ post }: PropsWithPost) {
       <div className="flex flex-wrap gap-2 text-sm capitalize">
         <Link href="/">Home</Link>
         <span>/</span>
-        <Link href={`/${post.category}`}>{post.category}</Link>
+        <Link href={`/posts/${post.category}`}>{post.category}</Link>
         <span>/</span>
-        <Link className="text-accent" href={`/${post.category}/${post.slug}`}>{post.slug}</Link>
+        <Link className="text-accent" href={`/posts/${post.category}/${post.slug}`}>{post.slug}</Link>
       </div>
 
       <div className="flex text-sm">
         <span>In:&nbsp;</span>
 
-        <Link href={`/${post.category}`} className="capitalize text-primary-label-secondary">
+        <Link href={`/posts/${post.category}`} className="capitalize text-primary-label-secondary">
           {post.category}
         </Link>
 

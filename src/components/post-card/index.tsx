@@ -20,7 +20,7 @@ export function PostCard({ post }: PostCardProps) {
   const isNew = postPublishedTime.getTime() > today.getTime() - 1000 * 60 * 60 * 24 * 3
 
   return (
-    <Link href={`${post.category}/${post.slug}`} className="group relative flex w-full flex-col rounded-sm border border-transparent bg-secondary transition-all hover:border-secondary-disabled" title={post.title}>
+    <Link href={`/posts/${post.category}/${post.slug}`} className="group relative flex w-full flex-col rounded-sm border border-transparent bg-secondary transition-all hover:border-secondary-disabled" title={post.title}>
 
       <div className="overflow-hidden">
         <Image src={post.image} width={720} height={404} alt="image" className="transition-all group-hover:scale-110" />
