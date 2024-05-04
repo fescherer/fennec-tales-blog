@@ -3,6 +3,7 @@
 import { PropsWithPost } from '@/@types'
 import { useState } from 'react'
 import { PostTableOfContentList } from './post-table-of-content-list'
+import { Card } from '../card'
 
 export function PostTableOfContent({ post }: PropsWithPost) {
   const [isHeadingExpanded, setIsHeadingExpanded] = useState(false)
@@ -21,11 +22,8 @@ export function PostTableOfContent({ post }: PropsWithPost) {
   const hiddenHeadings = headings.slice(5, headings.length)
 
   return (
-    <div className="flex flex-col rounded bg-secondary p-2">
-      <h2>Table of Content</h2>
-
+    <Card title="Table of Contents">
       <div className="relative">
-
         <div className="flex flex-col gap-1">
           <PostTableOfContentList list={firstHeadings} />
         </div>
@@ -37,12 +35,11 @@ export function PostTableOfContent({ post }: PropsWithPost) {
         </div>
       </div>
 
-      {hiddenHeadings.length > 0
-      && (
-        <button type="button" onClick={() => setIsHeadingExpanded(prev => !prev)} className="self-end text-sm">
-          {isHeadingExpanded ? 'Expand less' : 'Expand more'}
+      {hiddenHeadings.length > 0 && (
+        <button type="button" onClick={() => setIsHeadingExpanded(prev => !prev)} className="mui-icon-filled mt-4 w-full py-2 text-center transition-all hover:text-primary-label-active">
+          {isHeadingExpanded ? 'expand_less' : 'expand_more'}
         </button>
       )}
-    </div>
+    </Card>
   )
 }

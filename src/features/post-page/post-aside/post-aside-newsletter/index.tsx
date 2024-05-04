@@ -1,7 +1,9 @@
+import { Card } from '@/components/card'
+
 export function PostAsideNewsletter() {
   return (
-    <div>
+    <Card title="Newsletter">
       <span>Newsletter</span>
-    </div>
+    </Card>
   )
 }

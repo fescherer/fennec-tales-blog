@@ -13,9 +13,9 @@ const config: Config = {
         active: 'red',
         border: '#ffffff55',
         label: {
-          primary: '#FFFFFF',
-          secondary: '#FFFFFFaa',
-          tertiary: '#FFFFFF77',
+          primary: '#F2F4FF',
+          secondary: '#F2F4FFcc',
+          tertiary: '#F2F4FF77',
           active: '#FFFFFF',
           disabled: '#FFFFFF22',
         },

@@ -21,7 +21,7 @@ export function PostPage({ post }: PropsWithPost) {
         <div>
           <PostHeader post={post} />
 
-          <div className="block lg:hidden">
+          <div className="block pt-8 lg:hidden">
             <PostTableOfContent post={post} />
           </div>
 

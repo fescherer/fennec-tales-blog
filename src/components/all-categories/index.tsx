@@ -1,5 +1,6 @@
 import { getAllCategories } from '@/utils/functions'
 import Link from 'next/link'
+import { Card } from '../card'
 
 interface AllCategoriesProps {
   selectedCategory?: string
@@ -9,20 +10,20 @@ export async function AllCategories({ selectedCategory }: AllCategoriesProps) {
   const allcategories = await getAllCategories()
 
   return (
-    <div title="All categories">
-      <ul className="flex list-disc flex-col gap-1 pl-4 capitalize">
+    <Card title="All categories">
+      <div className="flex flex-col text-sm capitalize">
         {allcategories.map(category => (
-          <li key={category} className={selectedCategory === category ? 'font-bold text-accent' : ''}>
-            <Link
-              aria-label={`Remove category filter for ${category}`}
-              target="_self"
-              href={category === selectedCategory ? '/' : `/posts/${category}`}
-            >
-              {category}
-            </Link>
-          </li>
+          <Link
+            key={category}
+            className={`p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary ${selectedCategory === category ? 'font-bold' : ''}`}
+            aria-label={`Remove category filter for ${category}`}
+            target="_self"
+            href={category === selectedCategory ? '/' : `/posts/${category}`}
+          >
+            {category}
+          </Link>
         ))}
-      </ul>
-    </div>
+      </div>
+    </Card>
   )
 }
