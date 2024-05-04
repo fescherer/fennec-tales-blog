@@ -3,11 +3,11 @@ import { PostContent } from './post-content'
 import { PostReference } from './post-reference'
 import { PostAuthor } from './post-author'
 import { PostFeedback } from './post-feedback'
-import { PostComments } from './post-comments'
 import { RelatedPosts } from '../../components/related-posts'
 import { PostAside } from './post-aside'
 import { PostTableOfContent } from '@/components/post-table-of-content'
 import { PostHeader } from './post-header'
+import { PostEditThisArticle } from './post-edit-this-article'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
@@ -18,7 +18,7 @@ export function PostPage({ post }: PropsWithPost) {
       />
 
       <div className="z-10 mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
-        <div>
+        <div className="space-y-10">
           <PostHeader post={post} />
 
           <div className="block pt-8 lg:hidden">
@@ -29,9 +29,9 @@ export function PostPage({ post }: PropsWithPost) {
           <PostReference post={post} />
           <PostAuthor post={post} />
           <PostFeedback post={post} />
-          {/* <EditThisArticle /> */}
+          <PostEditThisArticle post={post} />
           <RelatedPosts post={post} orientation="horizontal" />
-          <PostComments post={post} />
+          {/* <PostComments post={post} /> */}
         </div>
 
         <PostAside post={post} />
