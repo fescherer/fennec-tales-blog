@@ -1,4 +1,4 @@
-import { IPost, IRecommendedPost } from '@/@types'
+import { IPost } from '@/@types'
 import { getPostsData } from './post-functions'
 
 export function getTimeFormated(dateString: string) {
@@ -10,25 +10,6 @@ export function getTimeFormated(dateString: string) {
   }).format(date)
 
   return publishedDate
-}
-
-export function getRecommendedPosts(post: IPost, allPost: IPost[]): IRecommendedPost[] {
-  const recommendedPosts: IRecommendedPost[] = []
-
-  allPost.forEach((item) => {
-    if (item.slug !== post.slug) {
-      let points = 0
-      item.tags.forEach((tag) => {
-        if (post.tags.includes(tag))
-          points += 1
-      })
-      recommendedPosts.push({ id: item.slug, points, post: item })
-    }
-  })
-
-  const sorted = recommendedPosts.sort(({ points: pointsA }, { points: pointsB }) => pointsB - pointsA)
-
-  return sorted.slice(0, 3)
 }
 
 export async function getAllTags() {

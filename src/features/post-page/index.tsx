@@ -30,7 +30,7 @@ export function PostPage({ post }: PropsWithPost) {
           <PostAuthor post={post} />
           <PostFeedback post={post} />
           {/* <EditThisArticle /> */}
-          <RelatedPosts post={post} />
+          <RelatedPosts post={post} orientation="horizontal" />
           <PostComments post={post} />
         </div>
 
