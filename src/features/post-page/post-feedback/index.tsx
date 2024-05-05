@@ -1,10 +1,15 @@
 import { PropsWithPost } from '@/@types'
+import { Card } from '@/components/card'
+import { FeedbackStars } from './feedback-stars'
+import { FeedbackShare } from './feedback-share'
 
 export function PostFeedback({ post }: PropsWithPost) {
+  // TODO POST FEEDBACK
   return (
-    <div>
-      <span>{post.title}</span>
-      <span>PostFeedback</span>
-    </div>
+    <Card title="">
+      {post.title}
+      <FeedbackStars />
+      <FeedbackShare post={post} />
+    </Card>
   )
 }

@@ -7,6 +7,7 @@ import { websiteJSONLD } from '@/utils/JSONLD/data/website'
 import { getAllTags } from '@/utils/functions'
 import { Pagination } from '@/components/pagination'
 import { PAGES_NUMBER } from '@/utils/consts'
+import { Suspense } from 'react'
 
 type PostListProps = {
   posts: IPost[]
@@ -39,7 +40,9 @@ export async function PostList({ type, posts, tag, query, page }: PostListProps)
         }
       </div>
 
-      <Pagination posts={filteredPosts} />
+      <Suspense>
+        <Pagination posts={filteredPosts} />
+      </Suspense>
     </div>
   )
 }

@@ -12,7 +12,7 @@ export function Footer() {
 
       </div>
 
-      <div className="h-px w-full border-b bg-primary-border" />
+      <hr className="h-px w-full border-b bg-primary-border" />
 
       <div className="flex flex-col gap-2 p-4">
         <div className="flex justify-center gap-4 text-center text-sm">

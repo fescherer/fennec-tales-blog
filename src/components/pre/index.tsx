@@ -2,9 +2,10 @@
 
 // TODO Corrigir
 
-export function Pre({ children, raw, ...props }: any) {
+// { children, raw, ...props }: any
+export function Pre() {
   // const lang = (props['data-language']) || 'shell'
-  console.log(children, raw, props)
+  // console.log(children, raw, props)
 
   return null
 

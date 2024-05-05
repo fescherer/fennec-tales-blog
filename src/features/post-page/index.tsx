@@ -1,7 +1,5 @@
 import { PropsWithPost } from '@/@types'
 import { PostContent } from './post-content'
-import { PostReference } from './post-reference'
-import { PostAuthor } from './post-author'
 import { PostFeedback } from './post-feedback'
 import { RelatedPosts } from '../../components/related-posts'
 import { PostAside } from './post-aside'
@@ -26,11 +24,13 @@ export function PostPage({ post }: PropsWithPost) {
           </div>
 
           <PostContent post={post} />
-          <PostReference post={post} />
-          <PostAuthor post={post} />
+          <hr className="h-px w-full border-b bg-primary-border" />
+          {/* <PostReference post={post} />
+          <PostAuthor post={post} /> */}
           <PostFeedback post={post} />
           <PostEditThisArticle post={post} />
           <RelatedPosts post={post} orientation="horizontal" />
+          {/* TODO POST COMMENTS */}
           {/* <PostComments post={post} /> */}
         </div>
 

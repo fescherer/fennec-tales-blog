@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { ThemeBtn } from './theme-btn'
 import { MenuBtn } from './menu-btn'
 import { SearchInput } from './search-input'
+import { Suspense } from 'react'
 
 export function Header() {
   return (
@@ -12,7 +13,9 @@ export function Header() {
           <Link href="/">Logo</Link>
         </div>
 
-        <SearchInput className="hidden items-center md:flex md:w-64" />
+        <Suspense>
+          <SearchInput className="hidden items-center md:flex md:w-64" />
+        </Suspense>
 
         <div className="flex gap-1">
           <ThemeBtn />
@@ -27,7 +30,9 @@ export function Header() {
         </div>
       </div>
 
-      <SearchInput className="my-2 flex w-full items-center md:hidden md:w-1 " />
+      <Suspense>
+        <SearchInput className="my-2 flex w-full items-center md:hidden md:w-1 " />
+      </Suspense>
 
     </header>
   )

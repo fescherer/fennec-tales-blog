@@ -8,7 +8,6 @@ export function getCategoriesName(): string[] {
   try {
     // Read the /blog folder at root dir
     const typesListFolder: string[] = readdirSync('./src/blog/')
-    console.log(typesListFolder)
     return typesListFolder
   } catch (error) {
     console.log(error)
