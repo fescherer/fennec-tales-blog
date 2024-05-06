@@ -1,9 +1,19 @@
+'use client'
+
 import Link from 'next/link'
 import { ThemeBtn } from './theme-btn'
 import { MenuBtn } from './menu-btn'
 import { SearchInput } from './search-input'
+import { useIsScrolling } from '@/hooks/useIsScrolling'
 
-export function Header() {
+type HeaderProps = {
+  isArticle?: boolean
+}
+
+export function Header({ isArticle }: HeaderProps) {
+  const isScrolling = useIsScrolling()
+
+  if (isScrolling && isArticle) return <></>
   return (
     <header className="fixed z-50 w-full bg-primary p-2 md:p-4">
       <div className="flex w-full justify-between">

@@ -36,7 +36,7 @@ export function PostTableOfContent({ post }: PropsWithPost) {
       </div>
 
       {hiddenHeadings.length > 0 && (
-        <button type="button" onClick={() => setIsHeadingExpanded(prev => !prev)} className="mui-icon-filled mt-4 w-full py-2 text-center transition-all hover:text-primary-label-active">
+        <button type="button" onClick={() => setIsHeadingExpanded(prev => !prev)} className="mui-icon-filled w-full py-2 text-center transition-all hover:text-primary-label-active">
           {isHeadingExpanded ? 'expand_less' : 'expand_more'}
         </button>
       )}

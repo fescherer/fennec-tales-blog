@@ -6,36 +6,45 @@ import { PostAside } from './post-aside'
 import { PostTableOfContent } from '@/components/post-table-of-content'
 import { PostHeader } from './post-header'
 import { PostEditThisArticle } from './post-edit-this-article'
+import { ScrollToTopBtn } from '@/components/scroll-to-top-btn'
+import { ReadingBarIndicator } from './reading-bar-indicator'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
-    <div className="m-auto max-w-6xl">
-      <div
-        style={{ backgroundImage: `url(${post.image})` }}
-        className="absolute left-0 top-0 -z-10 h-1/2 w-full bg-cover blur-sm brightness-75"
-      />
+    <>
+      <ReadingBarIndicator />
 
-      <div className="z-10 mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
-        <div className="space-y-10">
-          <PostHeader post={post} />
+      <div className="m-auto max-w-6xl">
 
-          <div className="block pt-8 lg:hidden">
-            <PostTableOfContent post={post} />
+        <div
+          style={{ backgroundImage: `url(${post.image})` }}
+          className="absolute left-0 top-0 -z-10 h-1/2 w-full bg-cover blur-sm brightness-75"
+        />
+
+        <div className="relative z-10 mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
+          <div className="space-y-10">
+            <PostHeader post={post} />
+
+            <div className="block pt-8 lg:hidden">
+              <PostTableOfContent post={post} />
+            </div>
+
+            <PostContent post={post} />
+            <hr className="h-px w-full border-b bg-primary-border" />
+            {/* <PostReference post={post} />
+          <PostAuthor post={post} /> */}
+            <PostFeedback post={post} />
+            <PostEditThisArticle post={post} />
+            <RelatedPosts post={post} orientation="horizontal" />
+            {/* TODO POST COMMENTS */}
+            {/* <PostComments post={post} /> */}
           </div>
 
-          <PostContent post={post} />
-          <hr className="h-px w-full border-b bg-primary-border" />
-          {/* <PostReference post={post} />
-          <PostAuthor post={post} /> */}
-          <PostFeedback post={post} />
-          <PostEditThisArticle post={post} />
-          <RelatedPosts post={post} orientation="horizontal" />
-          {/* TODO POST COMMENTS */}
-          {/* <PostComments post={post} /> */}
+          <PostAside post={post} />
+          <ScrollToTopBtn />
         </div>
 
-        <PostAside post={post} />
       </div>
-    </div>
+    </>
   )
 }

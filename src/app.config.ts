@@ -4,6 +4,13 @@ export const DATA = {
   repo: 'https://github.com/fescherer/blog',
   rss: 'https://blog.felipescherer.com/feed.xml',
   company: 'Fennec Tales Studio',
+  company_page: 'https://github.com/fescherer/blog',
+  company_bio: 'Fennec tales bio',
+  company_profiles: {
+    linkedin: '',
+    github: '',
+    youtube: '',
+  },
 }
 
 export const METADATA = {
