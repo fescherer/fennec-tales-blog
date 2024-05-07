@@ -23,16 +23,12 @@ export function PostTableOfContent({ post }: PropsWithPost) {
 
   return (
     <Card title="Table of Contents">
-      <div className="relative">
-        <div className="flex flex-col gap-1">
-          <PostTableOfContentList list={firstHeadings} />
-        </div>
+      <div className="relative flex flex-col gap-1">
+        <PostTableOfContentList list={firstHeadings} />
       </div>
 
       <div className="grid transition-all duration-300" style={{ gridTemplateRows: isHeadingExpanded ? '1fr' : '0fr' }}>
-        <div className="overflow-hidden">
-          <PostTableOfContentList list={hiddenHeadings} />
-        </div>
+        <PostTableOfContentList list={hiddenHeadings} />
       </div>
 
       {hiddenHeadings.length > 0 && (

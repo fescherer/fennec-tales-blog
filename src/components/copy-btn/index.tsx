@@ -1,7 +1,7 @@
 'use client'
 
+import { Tooltip } from '@/components/tooltip'
 import { useState } from 'react'
-// import { Copy, CopyCheck } from 'lucide-react'
 interface CopyBtnProps {
   text: string
 }
@@ -22,11 +22,10 @@ export function CopyBtn({ text }: CopyBtnProps) {
   }
 
   return (
-    <button aria-label="Copy code" type="button" disabled={isCopied} onClick={copy}>
-      {/* <Copy size={20} weight={isCopied ? 'fill' : 'regular'} /> */}
-      {/* {
-        isCopied ? <CopyCheck className="text-brand-primary" /> : <Copy className="transition-all hover:text-brand-primary" />
-      } */}
-    </button>
+    <Tooltip tooltip="Copy code">
+      <button className="mui-icon-filled" aria-label="Copy code" type="button" disabled={isCopied} onClick={copy}>
+        {isCopied ? 'file_copy' : 'content_copy'}
+      </button>
+    </Tooltip>
   )
 }

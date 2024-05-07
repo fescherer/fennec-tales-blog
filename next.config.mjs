@@ -23,6 +23,7 @@ const nextConfig = {
 /** @type {import('rehype-pretty-code').Options} */
 const rehypePrettyCodeConfig = {
   theme: 'dracula',
+
 }
 
 const withMDX = createMDX({

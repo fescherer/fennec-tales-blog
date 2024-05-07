@@ -2,9 +2,10 @@
 /* eslint-disable @next/next/no-img-element */
 import type { MDXComponents } from 'mdx/types'
 import { DetailedHTMLProps, ImgHTMLAttributes } from 'react'
-import Link from 'next/link'
+import PrimitiveLink from 'next/link'
 import { slugyfy } from './utils/slugfy'
-import { Pre, Link as PrimitiveLink } from './components'
+import { Pre, Link } from './components'
+import { Separator } from './components/separator'
 
 interface IImg extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   source?: string
@@ -47,10 +48,10 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <table className="border-collapse" {...props}>{children}</table>
     ),
     p: ({ children, ...props }: any) => (
-      <p className="my-3 leading-normal tracking-wider text-primary-label-secondary" {...props}>{children}</p>
+      <p className="my-3 text-justify leading-normal tracking-wider text-primary-label-secondary" {...props}>{children}</p>
     ),
     hr: ({ children, ...props }: any) => (
-      <hr className="text-primary-label-tertiary" {...props}>{children}</hr>
+      <Separator {...props} layer="primary">{children}</Separator>
     ),
     th: ({ children, ...props }: any) => (
       <th className="border border-secondary bg-secondary text-center" {...props}>
@@ -71,7 +72,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
     pre: ({ ...props }: any) => (<Pre {...props} />),
 
     a: ({ children, ...props }: any) => (
-      <PrimitiveLink aria-label={`Go to ${children}`} {...props} target="_blank" className="tracking-wide text-accent transition-all hover:border-b hover:border-b-accent-active hover:text-accent-active">{children}</PrimitiveLink>
+      <Link aria-label={`Go to ${children}`} {...props} target="_blank" className="tracking-wide">{children}</Link>
     ),
 
     ul: ({ children, ...props }: any) => (
@@ -100,9 +101,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       if (source) {
         return (
           <figure>
-            <Link href={source} target="_blank">
+            <PrimitiveLink href={source} target="_blank">
               <img {...rest} className="m-auto" />
-            </Link>
+            </PrimitiveLink>
 
             <figcaption className="text-center">
               <span className="font-bold">
@@ -112,9 +113,9 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
 
               <span> Ref.</span>
 
-              <PrimitiveLink href={source} target="_blank">
+              <Link href={source} target="_blank">
                 {source}
-              </PrimitiveLink>
+              </Link>
             </figcaption>
           </figure>
         )

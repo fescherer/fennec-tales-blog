@@ -33,6 +33,12 @@ module.exports = {
       'warn', {
         // whitelist: ['material-icons'],
         whitelist: ['animate__.*'],
+        callees: ['clsx', 'cn'],
+      },
+    ],
+    'tailwindcss/classnames-order': [
+      'warn', {
+        callees: ['clsx', 'cn'],
       },
     ],
     'react/button-has-type': ['error'],

@@ -24,7 +24,7 @@ export function getStyleForHeading(level: number) {
 
 export function PostTableOfContentList({ list }: PostIndexListProps) {
   return (
-    <div className="flex flex-col">
+    <nav className="flex flex-col overflow-hidden ">
       {list.map(heading => (
         <Link
           target="_self"
@@ -35,6 +35,6 @@ export function PostTableOfContentList({ list }: PostIndexListProps) {
           {heading.title}
         </Link>
       ))}
-    </div>
+    </nav>
   )
 }

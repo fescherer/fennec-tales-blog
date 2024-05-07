@@ -1,4 +1,5 @@
 import { PropsWithClassName } from '@/@types/classname'
+import { Separator } from '../separator'
 
 export function Menu({ className }: PropsWithClassName) {
   return (
@@ -8,7 +9,7 @@ export function Menu({ className }: PropsWithClassName) {
         <span>About us</span>
         <span>Services</span>
         <span>Portifolio</span>
-        <div className="my-2 border-b" />
+        <Separator layer="primary" className="my-2" />
       </div>
     </aside>
   )

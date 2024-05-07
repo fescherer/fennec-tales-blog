@@ -10,7 +10,6 @@ const config: Config = {
       primary: {
         // Background 1 color
         DEFAULT: '#080809',
-        active: 'red',
         border: '#ffffff55',
         label: {
           primary: '#F2F4FF',
@@ -23,8 +22,7 @@ const config: Config = {
       secondary: {
         // Background 2 color
         DEFAULT: '#0E0F0F',
-        active: 'blue',
-        disabled: '#FFFFFF44',
+        border: '#ffffff55',
         label: {
           primary: '#FFFFFFdd',
           secondary: '#FFFFFFaa',
@@ -37,7 +35,6 @@ const config: Config = {
         // Brand color
         DEFAULT: '#08fabd',
         active: '#08faee',
-        disabled: '#FFFFFF22',
         label: {
           primary: '#0f0f0f',
           secondary: '#0f0f0faa',
@@ -79,6 +76,31 @@ const config: Config = {
       screens: {
         xs: '425px',
       },
+      keyframes: {
+        slideDownAndFade: {
+          from: { opacity: '0', transform: 'translateY(-2px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideLeftAndFade: {
+          from: { opacity: '0', transform: 'translateX(2px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideUpAndFade: {
+          from: { opacity: '0', transform: 'translateY(2px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideRightAndFade: {
+          from: { opacity: '0', transform: 'translateX(-2px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+      },
+      animation: {
+        slideDownAndFade: 'slideDownAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideLeftAndFade: 'slideLeftAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideUpAndFade: 'slideUpAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+        slideRightAndFade: 'slideRightAndFade 400ms cubic-bezier(0.16, 1, 0.3, 1)',
+      },
+
     },
   },
   plugins: [

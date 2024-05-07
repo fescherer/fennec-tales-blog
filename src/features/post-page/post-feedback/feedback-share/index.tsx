@@ -2,7 +2,8 @@ import { PropsWithPost } from '@/@types'
 import { DATA, METADATA } from '@/app.config'
 import { FacebookIcon, LinkedinIcon, PinterestIcon, RedditIcon, TelegramIcon, TwitterIcon, WhatsAppIcon } from '@/icons'
 import Link from 'next/link'
-import { CopyToClipboardBtn } from './copy-to-clipboard-btn'
+import { CopyBtn } from '@/components/copy-btn'
+import { Tooltip } from '@/components/tooltip'
 
 export function FeedbackShare({ post }: PropsWithPost) {
   const postLink = encodeURIComponent(`${METADATA.canonical_url}/posts/${post.category}/${post.slug}`)
@@ -57,11 +58,13 @@ export function FeedbackShare({ post }: PropsWithPost) {
 
   return (
     <div className="flex items-center gap-2 px-2">
-      <CopyToClipboardBtn copyText={`${METADATA.canonical_url}/posts/${post.category}/${post.slug}`} />
+      <CopyBtn text={`${METADATA.canonical_url}/posts/${post.category}/${post.slug}`} />
 
       {
         links.map(link => (
-          <Link key={link.id} className="rounded p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary" rel="noopener" target="_blank" href={link.link} title={link.name}>{link.icon}</Link>
+          <Tooltip key={link.id} tooltip={link.name}>
+            <Link className="rounded p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary" rel="noopener" target="_blank" href={link.link} title={link.name}>{link.icon}</Link>
+          </Tooltip>
         ))
       }
     </div>

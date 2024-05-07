@@ -5,7 +5,7 @@ import { JSONLD } from '@/utils/JSONLD'
 import { WebSite } from 'schema-dts'
 import { websiteJSONLD } from '@/utils/JSONLD/data/website'
 import { getAllTags } from '@/utils/functions'
-import { Pagination } from '@/components/pagination'
+import { Pagination } from '@/features/pagination'
 import { PAGES_NUMBER } from '@/utils/consts'
 import { Suspense } from 'react'
 

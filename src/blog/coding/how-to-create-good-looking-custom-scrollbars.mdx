@@ -86,17 +86,17 @@ In mobile we have a little different problem. In my opinion mobile, the scrollba
 
 ## Objectives
 
-In this article I gonna show you how you can make your scrollbars aesthetic as can be in many different browsers, only using CSS. I am already warning you that is not possible to make like a reset to them, like we have done to `h1`, `p` and so on. CSS has its limitations and to achieve the fully goal probably will you need some Javascript code or maybe create all the logic with it. The method I am gonna show you is relative simple and can works on most browsers like Mozilla Firefox, Google Chrome, Brave, Opera GX, Edge and Safari, there will be an image with properties browser support in the end of the article. I think that's enough of talk, let's code.
+In this article I gonna show you how you can make your scrollbars aesthetic as can be in many different browsers, only using CSS. I am already warning you that is not possible to make like a reset to them, like we have done to **h1**, **p** and so on. CSS has its limitations and to achieve the fully goal probably will you need some Javascript code or maybe create all the logic with it. The method I am gonna show you is relative simple and can works on most browsers like Mozilla Firefox, Google Chrome, Brave, Opera GX, Edge and Safari, there will be an image with properties browser support in the end of the article. I think that's enough of talk, let's code.
 
 ## Solution
 
 First, please, do not ever style the main scrollbar. This is not standard, this do not need to follow your layout, it's good to look native to users do get lost. I think is good to style your scrollbars inside something you created, because this is "part" of your layout, different from the main scrollbar that is "part" of browser's layout. Did get it?
 
-Well, for the solution, I searched a lot and got really frustrated when finding out the perfect solution do not exist, but we can came to a really nice result. Most of the sites uses some kind of Javascript or very difficult CSS approaches, so I filtered out the really necessary styles and merge them in a class `styled-scrollbars` you can use in the overflowing container. Most of these styles were gotten from [Reddit's aside menu](https://www.reddit.com).
+Well, for the solution, I searched a lot and got really frustrated when finding out the perfect solution do not exist, but we can came to a really nice result. Most of the sites uses some kind of Javascript or very difficult CSS approaches, so I filtered out the really necessary styles and merge them in a class **styled-scrollbars** you can use in the overflowing container. Most of these styles were gotten from [Reddit's aside menu](https://www.reddit.com).
 
 ## CSS code
 
-There is no error, we gonna use two properties for Firefox (`scrollbar-color` and `scrollbar-width`) and some webkit for Chromium's browsers.
+There is no error, we gonna use two properties for Firefox (**scrollbar-color** and **scrollbar-width**) and some webkit for Chromium's browsers.
 
 ``` css
   /* Firefox Only */
@@ -166,7 +166,7 @@ To find the browser's support, please look at:
 
 ## Additional tips
 
-One very interesting stuff I found by searching content for this article is a solution for components that has a special css for hovering effects, is to use `media query hover` to only enable this on hover support devices. You can checkout the [full video by the master of CSS Kevin Powell](https://www.youtube.com/watch?v=uuluAyw9AI0). I highly recommend.
+One very interesting stuff I found by searching content for this article is a solution for components that has a special css for hovering effects, is to use **media query hover** to only enable this on hover support devices. You can checkout the [full video by the master of CSS Kevin Powell](https://www.youtube.com/watch?v=uuluAyw9AI0). I highly recommend.
 
 ## Conclusion
 

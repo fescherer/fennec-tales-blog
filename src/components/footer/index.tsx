@@ -1,3 +1,4 @@
+import { Separator } from '../separator'
 import { Bio } from './bio'
 import { Copyright } from './copyright'
 import { SiteMap } from './site-map'
@@ -12,7 +13,7 @@ export function Footer() {
         </div>
       </div>
 
-      <hr className="h-px w-full border-b bg-primary-border" />
+      <Separator layer="primary" />
       <Copyright />
     </footer>
   )

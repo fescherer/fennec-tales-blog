@@ -34,7 +34,7 @@ export function SearchInput({ className }: PropsWithClassName) {
       <label htmlFor="default-search " className="mui-icon-filled pl-2">search</label>
 
       <div className="my-1 flex w-full gap-1 bg-secondary">
-        <input onChange={handleSearch} type="search" className="w-full bg-secondary !ring-transparent" id="default-search" defaultValue={inputValue} placeholder="Search" />
+        <input onChange={handleSearch} type="search" className="w-full bg-secondary !ring-transparent" id="default-search" defaultValue={inputValue} placeholder="Search..." />
         {/* {inputValue && <button type="button" onClick={clearValue} className="mui-icon-filled text-secondary-label-tertiary">clear</button> } */}
       </div>
 

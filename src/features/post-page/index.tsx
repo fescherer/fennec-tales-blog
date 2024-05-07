@@ -8,6 +8,7 @@ import { PostHeader } from './post-header'
 import { PostEditThisArticle } from './post-edit-this-article'
 import { ScrollToTopBtn } from '@/components/scroll-to-top-btn'
 import { ReadingBarIndicator } from './reading-bar-indicator'
+import { Separator } from '@/components/separator'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
@@ -21,8 +22,8 @@ export function PostPage({ post }: PropsWithPost) {
           className="absolute left-0 top-0 -z-10 h-1/2 w-full bg-cover blur-sm brightness-75"
         />
 
-        <div className="relative z-10 mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
-          <div className="space-y-10">
+        <div className="relative mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
+          <article className="space-y-10">
             <PostHeader post={post} />
 
             <div className="block pt-8 lg:hidden">
@@ -30,7 +31,7 @@ export function PostPage({ post }: PropsWithPost) {
             </div>
 
             <PostContent post={post} />
-            <hr className="h-px w-full border-b bg-primary-border" />
+            <Separator layer="primary" />
             {/* <PostReference post={post} />
           <PostAuthor post={post} /> */}
             <PostFeedback post={post} />
@@ -38,7 +39,7 @@ export function PostPage({ post }: PropsWithPost) {
             <RelatedPosts post={post} orientation="horizontal" />
             {/* TODO POST COMMENTS */}
             {/* <PostComments post={post} /> */}
-          </div>
+          </article>
 
           <PostAside post={post} />
           <ScrollToTopBtn />
