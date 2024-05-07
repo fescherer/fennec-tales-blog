@@ -1,6 +1,7 @@
 import { IPost } from '@/@types'
 import { METADATA } from '@/app.config'
 import { AUTHORS_DATA } from '@/authors.config'
+import { Header } from '@/components/header'
 import { PostPage } from '@/features/post-page'
 import { JSONLD } from '@/utils/JSONLD'
 import { getArticleJSONLD } from '@/utils/JSONLD/data/article'
@@ -96,8 +97,12 @@ export default async function SlugPage({ params: { slug, type } }: SlugPageProps
 
   return (
     <>
-      {JSONLD(getJSONLD(post, type, slug))}
-      <PostPage post={post} />
+      <Header isArticle />
+
+      <main className="flex-1 p-4 pt-[90px] md:pt-[66px]">
+        {JSONLD(getJSONLD(post, type, slug))}
+        <PostPage post={post} />
+      </main>
     </>
   )
 }

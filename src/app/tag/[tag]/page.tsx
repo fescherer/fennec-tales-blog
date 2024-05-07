@@ -1,4 +1,5 @@
 import { PropsWithSearchProps } from '@/@types/props'
+import { Header } from '@/components/header'
 import { Menu } from '@/components/menu'
 import { PostList } from '@/features/post-list'
 import { getPostsData, sortPosts } from '@/utils/post-functions'
@@ -16,12 +17,18 @@ export default async function Tag({ params: { tag }, searchParams }: PropsWithSe
 
   const posts = (await getPostsData()).filter(post => post.tags.includes(tag)).sort(sortPosts)
   return (
-    <div className="flex gap-2">
-      <Menu className="hidden md:block" />
+    <>
+      <Header />
 
-      <Suspense key={query + currentPage} fallback={<span>Loading</span>}>
-        <PostList query={searchParams?.query} page={searchParams?.page} posts={posts} type="" tag={tag} />
-      </Suspense>
-    </div>
+      <main className="flex-1 p-4 pt-[90px] md:pt-[66px]">
+        <div className="flex gap-2">
+          <Menu className="hidden md:block" />
+
+          <Suspense key={query + currentPage} fallback={<span>Loading</span>}>
+            <PostList query={searchParams?.query} page={searchParams?.page} posts={posts} type="" tag={tag} />
+          </Suspense>
+        </div>
+      </main>
+    </>
   )
 }

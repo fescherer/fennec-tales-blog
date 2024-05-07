@@ -22,7 +22,7 @@ export function Header({ isArticle }: HeaderProps) {
           <Link href="/">Logo</Link>
         </div>
 
-        <SearchInput className="hidden items-center md:flex md:w-64" />
+        {!isArticle && <SearchInput className="hidden items-center md:flex md:w-64" />}
 
         <div className="flex gap-1">
           <ThemeBtn />
@@ -37,8 +37,7 @@ export function Header({ isArticle }: HeaderProps) {
         </div>
       </div>
 
-      <SearchInput className="my-2 flex w-full items-center md:hidden md:w-1 " />
-
+      {!isArticle && <SearchInput className="my-2 flex w-full items-center md:hidden md:w-1 " />}
     </header>
   )
 }

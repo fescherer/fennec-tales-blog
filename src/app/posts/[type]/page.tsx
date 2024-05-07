@@ -1,4 +1,5 @@
 import { PropsWithSearchProps } from '@/@types/props'
+import { Header } from '@/components/header'
 import { Menu } from '@/components/menu'
 import { PostList } from '@/features/post-list'
 import { getCategoriesName, getPostsData, sortPosts } from '@/utils/post-functions'
@@ -21,12 +22,18 @@ export default async function TypePage({ params: { type }, searchParams }: Props
 
   const posts = (await getPostsData()).filter(post => post.category === type).sort(sortPosts)
   return (
-    <div className="flex gap-2">
-      <Menu className="hidden md:block" />
+    <>
+      <Header />
 
-      <Suspense key={query + currentPage} fallback={<span>Loading</span>}>
-        <PostList query={searchParams?.query} page={searchParams?.page} posts={posts} type={type} />
-      </Suspense>
-    </div>
+      <main className="flex-1 p-4 pt-[90px] md:pt-[66px]">
+        <div className="flex gap-2">
+          <Menu className="hidden md:block" />
+
+          <Suspense key={query + currentPage} fallback={<span>Loading</span>}>
+            <PostList query={searchParams?.query} page={searchParams?.page} posts={posts} type={type} />
+          </Suspense>
+        </div>
+      </main>
+    </>
   )
 }
