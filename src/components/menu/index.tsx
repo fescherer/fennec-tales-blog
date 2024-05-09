@@ -10,6 +10,14 @@ export function Menu({ className }: PropsWithClassName) {
         <span>Services</span>
         <span>Portifolio</span>
         <Separator layer="primary" className="my-2" />
+        <span>NEW VIDEO preview from channel</span>
+        <span>new short video preview</span>
+        <Separator layer="primary" className="my-2" />
+        <span>social medias</span>
+        <Separator layer="primary" className="my-2" />
+        <span>Saved articles localstorage</span>
+        <span>COnfig- theme</span>
+        <span>Notifications- news about the blog - commits, pr etc</span>
       </div>
     </aside>
   )

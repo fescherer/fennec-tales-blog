@@ -106,6 +106,35 @@ const config: Config = {
   plugins: [
     plugin(function ({ addComponents }) {
       addComponents({
+        '.styled-scrollbars': {
+          'scrollbar-color': 'red',
+          'scrollbar-width': 'thin',
+
+          '&::-webkit-scrollbar': {
+            width: '4px',
+            height: '4px',
+          },
+          '&::-webkit-scrollbar-track': {
+            background: 'transparent',
+          },
+          '@media (hover: hover)': {
+          //   '&:': {
+          //     scrollbarColor: '#47484baa transparent',
+          //     scrollbarWidth: 'thin',
+          //     transition: 'cubic-bezier(0.165, 0.84, 0.44, 1) 500ms all',
+          //   },
+
+            //   '.styled-scrollbars:hover': {
+            //     scrollbarColor: '#47484b transparent',
+            //   },
+
+          //   '.styled-scrollbars:hover::-webkit-scrollbar-thumb': {
+          //     'background': '#47484b',
+          //     '-ms-overflow-style': 'none',
+          //     'scrollbarWidth': 'thin',
+          //   },
+          },
+        },
         '.mui-icon-filled': {
           fontFamily: 'Material Icons',
           fontWeight: 'normal',

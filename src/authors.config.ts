@@ -9,14 +9,17 @@ export const AUTHORS_DATA = [
     profiles: [
       {
         id: 'profile',
+        name: 'Portifolio',
         url: 'https://felipescherer.com',
       },
       {
         id: 'github',
+        name: 'Github',
         url: 'https://github.com/fescherer',
       },
       {
         id: 'linkedin',
+        name: 'Linkedin',
         url: 'https://linkedin.com/in/fescherer/?locale=en_US',
       },
     ],

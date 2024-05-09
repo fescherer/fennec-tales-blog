@@ -24,7 +24,7 @@ export function getStyleForHeading(level: number) {
 
 export function PostTableOfContentList({ list }: PostIndexListProps) {
   return (
-    <nav className="flex flex-col overflow-hidden ">
+    <nav className="flex flex-col overflow-hidden">
       {list.map(heading => (
         <Link
           target="_self"

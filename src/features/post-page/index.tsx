@@ -8,7 +8,8 @@ import { PostHeader } from './post-header'
 import { PostEditThisArticle } from './post-edit-this-article'
 import { ScrollToTopBtn } from '@/components/scroll-to-top-btn'
 import { ReadingBarIndicator } from './reading-bar-indicator'
-import { Separator } from '@/components/separator'
+import { PostReference } from './post-reference'
+import { PostAuthor } from './post-author'
 
 export function PostPage({ post }: PropsWithPost) {
   return (
@@ -31,9 +32,8 @@ export function PostPage({ post }: PropsWithPost) {
             </div>
 
             <PostContent post={post} />
-            <Separator layer="primary" />
-            {/* <PostReference post={post} />
-          <PostAuthor post={post} /> */}
+            <PostReference post={post} />
+            <PostAuthor post={post} />
             <PostFeedback post={post} />
             <PostEditThisArticle post={post} />
             <RelatedPosts post={post} orientation="horizontal" />
