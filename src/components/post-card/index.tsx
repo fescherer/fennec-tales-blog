@@ -40,7 +40,7 @@ export function PostCard({ post }: PostCardProps) {
 
         <Separator layer="secondary" />
 
-        <div className="flex justify-between text-sm text-secondary-label-tertiary">
+        <div className="flex justify-between text-sm text-secondary-label-secondary">
           <time dateTime={publishedDate}>{publishedDate}</time>
           <span>{`${postTime} minute${postTime > 1 ? 's' : ''} read`}</span>
         </div>

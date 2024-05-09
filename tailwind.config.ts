@@ -14,9 +14,7 @@ const config: Config = {
         label: {
           primary: '#F2F4FF',
           secondary: '#F2F4FFcc',
-          tertiary: '#F2F4FF77',
           active: '#FFFFFF',
-          disabled: '#FFFFFF22',
         },
       },
       secondary: {
@@ -26,9 +24,7 @@ const config: Config = {
         label: {
           primary: '#FFFFFFdd',
           secondary: '#FFFFFFaa',
-          tertiary: '#FFFFFF77',
           active: '#FFFFFF',
-          disabled: '#FFFFFF22',
         },
       },
       accent: {
@@ -37,32 +33,25 @@ const config: Config = {
         active: '#08faee',
         label: {
           primary: '#0f0f0f',
-          secondary: '#0f0f0faa',
-          tertiary: '#0f0f0f70',
           active: '#ff0000',
-          disabled: '#FFFFFF22',
         },
       },
       feedback: {
         info: {
           DEFAULT: '',
           active: '',
-          disabled: '',
         },
         sucess: {
           DEFAULT: '',
           active: '',
-          disabled: '',
         },
         error: {
           DEFAULT: '#ff0000',
           active: '',
-          disabled: '',
         },
         warning: {
           DEFAULT: '',
           active: '',
-          disabled: '',
         },
       },
       transparent: 'transparent',
@@ -117,22 +106,20 @@ const config: Config = {
           '&::-webkit-scrollbar-track': {
             background: 'transparent',
           },
-          '@media (hover: hover)': {
-          //   '&:': {
-          //     scrollbarColor: '#47484baa transparent',
-          //     scrollbarWidth: 'thin',
-          //     transition: 'cubic-bezier(0.165, 0.84, 0.44, 1) 500ms all',
-          //   },
-
-            //   '.styled-scrollbars:hover': {
-            //     scrollbarColor: '#47484b transparent',
-            //   },
-
-          //   '.styled-scrollbars:hover::-webkit-scrollbar-thumb': {
-          //     'background': '#47484b',
-          //     '-ms-overflow-style': 'none',
-          //     'scrollbarWidth': 'thin',
-          //   },
+          '@media (hover:hover)': {
+            '&': {
+              scrollbarColor: '#47484baa transparent',
+              scrollbarWidth: 'thin',
+              transition: 'cubic-bezier(0.165, 0.84, 0.44, 1) 500ms all',
+            },
+            '&:hover': {
+              scrollbarColor: '#47484b transparent',
+            },
+            '&::-webkit-scrollbar-thumb': {
+              'background': '#47484b',
+              '-ms-overflow-style': 'none',
+              'scrollbarWidth': 'thin',
+            },
           },
         },
         '.mui-icon-filled': {

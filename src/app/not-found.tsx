@@ -39,7 +39,7 @@ export default async function NotFoundPage() {
                   key={link.name}
                   href={link.href}
                   target={link.target}
-                  className="flex w-full items-center justify-between rounded border border-primary-border p-4 text-primary-label-secondary transition-all hover:border-primary-label-primary hover:text-primary-label-primary"
+                  className="flex w-full items-center justify-between rounded border border-primary-border p-4 text-primary-label-secondary transition-all hover:border-primary-label-active hover:text-primary-label-primary"
                 >
                   {link.name}
                   <span className="mui-icon-filled opacity-80">{link.icon}</span>
