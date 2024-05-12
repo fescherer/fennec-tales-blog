@@ -36,7 +36,15 @@ export function PostPage({ post }: PropsWithPost) {
             <PostAuthor post={post} />
             <PostFeedback post={post} />
             <PostEditThisArticle post={post} />
-            <RelatedPosts post={post} orientation="horizontal" />
+
+            <div className="block md:hidden">
+              <RelatedPosts post={post} orientation="vertical" />
+            </div>
+
+            <div className="hidden md:block">
+              <RelatedPosts post={post} orientation="horizontal" />
+            </div>
+
             {/* TODO POST COMMENTS */}
             {/* <PostComments post={post} /> */}
           </article>

@@ -1,6 +1,7 @@
 import { DATA } from '@/app.config'
 import { Tooltip } from '@/components/tooltip'
 import { DiscordIcon, FigmaIcon, GithubIcon, InstagramIcon, LinkedinIcon, PinterestIcon, RedditIcon, TiktokIcon, TwitterIcon } from '@/icons'
+import { LogoIcon } from '@/icons/logo'
 import { YoutubeIcon } from '@/icons/youtube'
 import Link from 'next/link'
 
@@ -69,12 +70,12 @@ export function Bio() {
   ]
 
   return (
-    <div className="flex flex-col gap-2 ">
+    <div className="flex max-w-80 flex-col gap-2">
 
-      <span>logo</span>
-      <p className="max-w-prose text-sm">{DATA.company_bio}</p>
+      <LogoIcon />
+      <p className="max-w-prose text-sm text-secondary-label-secondary">{DATA.company_bio}</p>
 
-      <div className="flex gap-4">
+      <div className="flex flex-wrap justify-center gap-4">
         <Tooltip tooltip="Subscribe to RSS">
           <Link className="mui-icon-filled" aria-label="Go to RSS's author" href="/feed.xml">rss_feed</Link>
         </Tooltip>

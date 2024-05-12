@@ -2,6 +2,9 @@ import { PropsWithClassName } from '@/@types/classname'
 import { Separator } from '../separator'
 
 export function Menu({ className }: PropsWithClassName) {
+  const a = 1
+  if (1 === a)
+    return <></>
   return (
     <aside className={`${className} relative w-52 px-2`}>
       <div className="sticky left-16 top-[66px] flex w-full flex-col">

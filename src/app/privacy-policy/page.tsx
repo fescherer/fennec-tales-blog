@@ -1,13 +1,11 @@
 import { Link } from '@/components'
 import { H1, H2, H3, ListItem, ListUnorganized, Text } from '@/components/article-items'
-import { Header } from '@/components/header'
+import { ContentWrapper } from '@/components/content-wrapper'
 
 export default function Page() {
   return (
-    <>
-      <Header isArticle />
-
-      <main className="m-auto max-w-4xl flex-1 p-4 pt-[90px] md:pt-[66px]">
+    <ContentWrapper isArticle>
+      <div className="m-auto max-w-4xl flex-1 p-4 pt-[90px] md:pt-[66px]">
         <H1>Privacy Policy</H1>
         <Text>Last updated: October 17, 2023</Text>
         <Text>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</Text>
@@ -343,7 +341,7 @@ export default function Page() {
             <Link href="https://www.linkedin.com/in/fescherer" rel="external nofollow noopener" target="_blank">Linkedin</Link>
           </ListItem>
         </ListUnorganized>
-      </main>
-    </>
+      </div>
+    </ContentWrapper>
   )
 }

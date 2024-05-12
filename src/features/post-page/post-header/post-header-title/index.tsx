@@ -8,17 +8,17 @@ export function PostHeaderTitle({ post }: PropsWithPost) {
   const postTime = Math.ceil(readingTime(post.content).minutes)
 
   return (
-    <div>
+    <div className="flex flex-col gap-3">
       <h1 className="text-4xl font-medium">{post.title}</h1>
 
-      <p className="flex gap-4 text-sm">
+      <p className="flex flex-col gap-4 text-sm md:flex-row">
         <span>
           Published at&nbsp;
           {publishedDate}
 
         </span>
 
-        ●
+        <span className="hidden md:block">●</span>
 
         <span>
           Updated at&nbsp;
@@ -26,7 +26,7 @@ export function PostHeaderTitle({ post }: PropsWithPost) {
 
         </span>
 
-        ●
+        <span className="hidden md:block">●</span>
 
         <span>
           {postTime}

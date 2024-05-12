@@ -1,19 +1,21 @@
 import { Link } from '@/components/link'
 
+// TODO PUT LINKS
+
 const links = [
-  {
-    heading: 'INFORMATION',
-    links: [
-      {
-        href: '/services',
-        name: 'Services',
-      },
-      {
-        href: '/about-us',
-        name: 'About Us',
-      },
-    ],
-  },
+  // {
+  //   heading: 'INFORMATION',
+  //   links: [
+  //     {
+  //       href: '/services',
+  //       name: 'Services',
+  //     },
+  //     {
+  //       href: '/about-us',
+  //       name: 'About Us',
+  //     },
+  //   ],
+  // },
   {
     heading: 'SUPPORT',
     links: [

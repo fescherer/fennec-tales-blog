@@ -5,7 +5,7 @@ export const DATA = {
   rss: 'https://blog.felipescherer.com/feed.xml',
   company: 'Fennec Tales Studio',
   company_page: 'https://github.com/fescherer/blog',
-  company_bio: 'Fennec tales bio',
+  company_bio: 'A blog made with passion of technology, design and gaming. Feel free to contribute on Github\'s page',
   company_profiles: {
     linkedin: '',
     github: '',
@@ -15,7 +15,7 @@ export const DATA = {
 
 export const METADATA = {
   title: 'Fennec Tales Studio\'s Blog',
-  description: 'A blog made with passion of tecnlogy, design and gaming. Feel free to contribute on Github\'s page',
+  description: 'A blog made with passion of technology, design and gaming. Feel free to contribute on Github\'s page',
   canonical_url: 'https://fennectales.com',
   thumb: {
     url: '/thumb.png',
