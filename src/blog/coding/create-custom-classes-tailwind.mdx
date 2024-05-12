@@ -1,0 +1,164 @@
+export const metadata = {
+title: 'Create custom classes Tailwind',
+published_date: '2024-05-12T10:00:00.500Z',
+updated_at: '2024-05-12T10:00:00.500Z',
+image: 'https://github.com/fescherer/fennec-tales-blog/assets/62115215/cd8a88c6-584f-4017-8774-713bf588bdff',
+alt: '',
+video_url:'',
+project_url:'',
+figma_url:'',
+github_url:'',
+tags: [],
+author: 'fescherer',
+sources: [{
+  date: '2024-05-12T10:00:00',
+  title: 'Tailwind Docs',
+  link: 'https://tailwindcss.com/docs',
+  }]
+}
+
+Tailwind CSS is a popular modern CSS framework known for its utility-first approach. Unlike component-based frameworks like Bootstrap, Tailwind provides a collection of low-level utility classes that you combine to achieve your desired styles. This approach offers greater flexibility and granular control over your styles. It also boasts excellent build optimizations, including generating only the classes used in your project.
+
+While Tailwind offers built-in customization options, this article explores various methods for creating custom classes, with a focus on maintaining a positive developer experience.
+
+## Tailwind CSS: Beyond the Basics - Crafting Custom Classes
+
+Tailwind CSS has a lot of classes, but there is some time you find yourself the need to use a class that are not in the default package, so what you do?
+
+There are a lot of ways to create custom classes, described in [docs](https://tailwindcss.com/docs/adding-custom-styles). I am gonna go though all of them, but be aware my favorite is the last one- By creating a plugin, so if you want, just skip to here
+
+## Arbitrary values-properties-variants
+
+Tailwind is built for really hard customization, and that’s so true, you can literaly create any class just combining some prefix or sufix and the compiler will generate for you the classes for build. So, Why we avoid this approach when dealing to customization? The answer is because this goes agains the reusability concept of Tailwind, and if you use more than one that that arbitrary value, I recommend to create a custom utility for it.
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/76b33e7a-bd3f-4940-aabd-e3232034fc7b"
+  name="Arbitrary property Tailwind example"
+  alt="code example of tailwind arbitrary using a color of background"
+/>
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/9994a2a8-a1df-4be8-813a-759d7ea15e64"
+  name="Build file  "
+  alt="Build file showing the arbitrary property became other class"
+/>
+
+## Customizing the theme
+
+If you want to change the properties already build in, like the font-size or color, it’s perfect and really easy to do just customizing the Tailwind theme file.
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/3fcdaf65-9624-4966-8ccd-49aa74daf8c1"
+  name="tailwind.config.ts"
+  alt="Creating a class my-blue in Tailwind file"
+/>
+
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/61559e23-be18-43ea-a0a5-04dc0fbca834"
+  name="Code example"
+  alt="Using the custom classes created in a div"
+/>
+
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/810e5dfc-70f1-4505-88df-bc1a25c8653d"
+  name="Build file- This may looks weird, but is the same blue I configured, but just with some Tailwind optimization."
+  alt="Build file showing that Tailwind handle better using theme"
+/>
+
+The problem is when you need to create a custom component class, like you repeat that same classes and that became redundant and hard to read.
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/5920d701-17f9-476e-8df4-c5c3024c4594"
+  name="Example of reduntant classes"
+  alt="File showing a lot of container with same classes"
+/>
+Isn’t better having just one class like `hello-world-container`? Yes.
+
+## @layer and @apply directive
+
+There is a way to add custom classes using some Tailwind directives in CSS files. Like this:
+
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/53c6e419-42b5-472e-a321-1af95569e58b"
+  name="Example of reduntant classes"
+  alt="File showing a lot of container with same classes"
+/>
+
+You can literaly put any CSS valid property just like the way you would do in normal CSS, but noticed I put the classes inside some directives, why? Tailwind is composed by layers that can be overwritten, eg. You have a base style for your button but you want to change it’s color just in one component, to make that you will need to overwrite it, in normal CSS you will probably use !important, and trust me in my experience if you had use !important, probabily there is something wrong with your code.
+
+So use layers with wisdom. I recommend using:
+
+- [@layer base](https://tailwindcss.com/docs/adding-custom-styles#adding-base-styles) for tag styles, like I used in the example for tag `code`.
+- [@layer components](https://tailwindcss.com/docs/adding-custom-styles#adding-component-classes) for classes that has more than one style like the `hello-world-container` which has **display: flex;flex-direction:column;justify-content:center;background-color:purple;padding:1rem**. Most customization you will need is gonna be made here.
+- [@layer utilities](https://tailwindcss.com/docs/adding-custom-styles#adding-custom-utilities) is the highest priority, so use carefully. I recommend using just for one single property like **transparent:background-color:transparent**. This will mostly be used for classes that do not exist in default Tailwind.
+
+Well, so we learned about the @layer directive, but what is that @apply in the example? This is a way to use your Tailwind token in the styling file. For build does not matter if you use the **hello-world-container** or **hello-world-container-2**, both produces the same result, so @apply helps your code readbility.
+
+Using directives may seen the best way to create custom classes in Tailwind, but as I said in the beginning of the article, this is not my favorite way. I prefer much more creating a custom plugin.
+
+## Why I do not like Tailwind directives like @layer and @apply
+
+Fist I need to say why I love the experience of working with Taiwlind insted other CSS framework similar like Bootstrap.
+
+Tailwind has been investing not just in optimizations and fast files, but in development experience too.
+
+Tailwind has a very nice VSCode plugin called [Tailwind Intellisense](https://tailwindcss.com/docs/editor-setup#intelli-sense-for-vs-code) I personally do not recommend you use Tailwind without this plugin. One thing it changes is when you hover a class, it shows what is that CSS equivalent, is literally required for me and I do not see me not using it.
+
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/9b5e1959-3c80-4589-867c-47b0fdf40e48"
+  name="Tailwind VSCode Intellisense showcase"
+  alt="Print showing when hovering the class has a popup showing CSS equivalent"
+/>
+
+You know, when you create custom classes, you need Tailwind Intellisense to recognize it, but I never found a way to make recognize directives like @layer. When creating custom classes like that, you do not have the hover preview :( This is unacceptable, specially because custom classes do not exist in Tailwind Docs, is the most important classes to have a register and a easy way to check the CSS equivalent.
+
+So going though Github Issues and making a lot of testing. I probably have the best solution to create custom classes in Tailwind.
+
+## Create custom plugins
+
+As you can see there are a lot of ways to customize you styles in Tailwind, but there is superior way to customize and still get the Tailwind Intellisense working for us, it’s called 🪽 Plugins 🪽. What is and how we implement?
+
+<Blockquote cite="https://en.wikipedia.org/wiki/Plug-in_(computing)">
+is a software component that adds a specific feature to an existing computer program
+</Blockquote>
+
+So in [Tailwind](https://tailwindcss.com/docs/plugins) is not diffent, plugins are a way to modify the base of Tailwind, you can do a lot of it, but in this article I just gonna show how you can use to create custom classes styles.
+
+Every Tailwind project has a **tailwind.config.js** or **tailwind.config.ts** which has all of Tailwind’s configuration, including the **theme** from earlier, but what we want is the **plugins**
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/27b51eae-d5a0-4c14-81cf-19c97aa76398"
+  name="tailwind.config.ts"
+  alt="tailwind.config.ts file"
+/>
+You will need to use a function from Tailwind called `plugin`. I highly recommend using Typescript, for its typing features, which helps a lot, but of course you can use Vanila Javascript too.
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/e42b46ba-2710-4575-81b4-6ad8e864e30f"
+  name="Plugin function"
+  alt="Plugin function"
+/>
+In it’s parameters you put what you want to create. For this article, we want a component, so we use the addComponent param.
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/bee18037-70d5-435f-810f-fa6876a62629"
+  name="Plugin function add components"
+  alt="Plugin function add components"
+/>
+Now just add the class name and the styles like CSS or (CSS Style Declation)[https://www.w3.org/TR/cssom/#the-cssstyledeclaration-interface] (backgroundColor insted background-color).
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/5a6db547-3f58-4eca-98ce-c5564885fbd6"
+  name="Custom class made by plugin example"
+  alt="Custom class made by plugin example"
+/>
+And there you go, now you have the hovering effec from Tailwind Intellisense :)
+<Img
+  src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/688da377-c59e-4cd2-ba24-b02499d4da25"
+  name="Class in action"
+  alt="Print showing when hovering the custom class made by plugin, showing the equivalent CSS"
+/>
+
+## More dev experience
+
+Here's an additional tip to elevate your Tailwind development experience: consider using the [eslint-plugin-tailwindcss package](https://www.npmjs.com/package/eslint-plugin-tailwindcss). This ESLint plugin offers various features to help you write cleaner and more maintainable Tailwind code.
+
+## Summary
+
+This article explored various methods for creating custom classes in Tailwind CSS, emphasizing the importance of a positive development experience. By leveraging Tailwind plugins, you can create custom styles while maintaining IntelliSense support and overall code clarity.
+
+This approach empowers you to extend Tailwind's capabilities while keeping your development workflow efficient and enjoyable.
+
+Thanks for reading see you in the next article, have a nice day 😊

@@ -106,7 +106,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
             </PrimitiveLink>
 
             <figcaption className="text-center">
-              <span className="font-bold">
+              <span className="font-bold text-primary-label-secondary">
                 {props.name}
                 .
               </span>
