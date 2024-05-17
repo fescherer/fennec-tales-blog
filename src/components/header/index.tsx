@@ -16,7 +16,7 @@ export function Header({ isArticle }: HeaderProps) {
         <div className="flex items-center gap-1">
           <MenuBtn />
 
-          <Link href="/">
+          <Link href="/" className="scale-75">
             <LogoIcon />
           </Link>
         </div>
