@@ -11,7 +11,7 @@ export function FilterTags({ type, alltags, tag }: FilterTagsProps) {
   const categories = getCategoriesName()
 
   return (
-    <div className="styled-scrollbars sticky top-[75px] z-50 touch-pan-y overflow-x-auto whitespace-nowrap bg-primary py-4">
+    <div className="styled-scrollbars sticky top-[120px] z-50 touch-pan-y overflow-x-auto whitespace-nowrap bg-primary py-4 md:top-[75px]">
       <div className="whitespace-nowrap will-change-transform">
         <Link href="/" className={`my-2 mr-2 min-w-12 rounded px-2 py-1 text-center text-sm capitalize  ${type === '' && !tag ? 'bg-secondary-label-primary text-secondary' : 'bg-secondary text-secondary-label-secondary'}`}>All</Link>
 
