@@ -1,6 +1,5 @@
 import { BioBtn } from '@/components/bio-btn'
 import { ContentWrapper } from '@/components/content-wrapper'
-import { YoutubeIcon } from '@/icons'
 
 export default function Bio() {
   return (
@@ -13,10 +12,10 @@ export default function Bio() {
           <span>Written blog</span>
         </BioBtn>
 
-        <BioBtn href="youtube.com">
+        {/* <BioBtn href="youtube.com">
           <YoutubeIcon />
           <span>Youtube Channel</span>
-        </BioBtn>
+        </BioBtn> */}
       </div>
     </ContentWrapper>
   )
