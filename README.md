@@ -1,8 +1,7 @@
-
 <a name="readme-top"></a>
 <div align="center">
 
-<a href="https://github.com/fennec-tales-blog ">
+<a href="https://github.com/fescherer/fennec-tales-blog">
 <img src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/d287b8a4-ef12-4e36-8441-5979a2d64396" alt="Logo" width="80" height="80">
 </a>
 
@@ -41,6 +40,17 @@ This blog contains articles about tech, art and game development, feel free to e
 [nextjs-url]: https://nextjs.org
 [tailwindcss-shield]: https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white
 [tailwindcss-url]: https://tailwindcss.com
+
+<p align="right">(<a href="#readme-top">back to top</a>)</p>
+
+<!-- **********************🐲Gifs Prints🐲********************** -->
+<a name="gifsPrints"></a>
+
+## 🏞️ Gifs Prints
+
+
+![Home Page](https://github.com/fescherer/fennec-tales-blog/assets/62115215/b67dca11-9043-43c3-b034-1cbcd939a31f)
+![Article page](https://github.com/fescherer/fennec-tales-blog/assets/62115215/05a19e97-f3b3-42a0-bab5-88e2668f0f5b)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
