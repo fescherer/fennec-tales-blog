@@ -5,7 +5,7 @@
 <img src="https://github.com/fescherer/fennec-tales-blog/assets/62115215/d287b8a4-ef12-4e36-8441-5979a2d64396" alt="Logo" width="80" height="80">
 </a>
 
-### Fennec Tales Blog
+### Fennec Tales' Blog
 
 Blog Fennec Tales Studio
 
