@@ -1,0 +1,68 @@
+export const metadata = {
+  title: 'Primitives data type in Javascript',
+  published_date: '2024-07-25T21:00:00.500Z',
+  updated_at: '2024-07-25T21:00:00.500Z',
+  image: '',
+  alt: '',
+  video_url: '',
+  project_url: '',
+  figma_url: '',
+  github_url: '',
+  tags: ['javascript', 'types'],
+  author: 'fescherer',
+  sources: [
+    {
+      date: '2024-07-25T18:00:00.500Z',
+      title: 'All about the BigInt - New Javascript Data Type - Justin Kim',
+      link: 'https://www.youtube.com/watch?v=jrPybxoSogs',
+    },
+    {
+      date: '2024-07-25T18:00:00.500Z',
+      title: 'JavaScript data types and data structures - MDN',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#number_type',
+    },
+  ],
+}
+
+Have you ever knew that Javascript has a type `bigInt`? No? Well, now you will know everthing about all 7 primitives types in Javascript. But first what is a primitive value?
+
+## Definifition
+
+In Javascript, a data type is considered primitive value if immutable and is not an object and has no methods or properties. You can never change a primitive value in Javascript, for example:
+
+```javascript
+let a = 'hello'
+let b = a
+console.log(b) // "hello"
+b.substring(2) // "llo"
+console.log(b) // "hello"
+console.log(a) // "hello"
+
+let c = [3]
+let d = c
+c.push(1)
+console.log(c) // Array [ 3, 1 ]
+console.log(d) // Array [ 3, 1 ]
+```
+
+In the example above, we can never change the primitive value string **hello** no matter how many methods we do in *b*, but is not the case of array *c* and *d*, when we push item to *d*, automatically pushes to *c* too, so is mutable.
+
+Primitives values are super important to know, independently of the language used, every one has a critical importance and usage case.
+
+## type number
+
+`Number` in Javascript is a primitive type that stores 64 bit numbers with double floating precision. In the docs you can find a lot more about `number`, but to simplify things, it represent numbers. We will talk more later in the article why we have 'other' ways to represent numbers and not only the `type number`. But for the most part it is related to its limitations. You see, computers cannot hold every infinite number, they have a limit, and so the programming languages. Javascript `number` that can be accessed with `Number.MAX_SAFE_INTEGER` and `Number.MIN_SAFE_INTEGER`.
+
+```javascript
+console.log(Number.MAX_SAFE_INTEGER)
+// 9007199254740991
+
+console.log(Number.MIN_SAFE_INTEGER)
+// -9007199254740991
+```
+
+
+
+## type BigInt
+
+Most of the languages cannot store infinite numbers, Javascript is no different, the `type number`
