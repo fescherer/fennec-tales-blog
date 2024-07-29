@@ -19,7 +19,7 @@ export const metadata = {
     {
       date: '2024-07-25T18:00:00.500Z',
       title: 'JavaScript data types and data structures - MDN',
-      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#number_type',
+      link: 'https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures',
     },
   ],
 }
@@ -61,8 +61,31 @@ console.log(Number.MIN_SAFE_INTEGER)
 // -9007199254740991
 ```
 
-
-
 ## type BigInt
 
-Most of the languages cannot store infinite numbers, Javascript is no different, the `type number`
+Most of the languages cannot store infinite numbers, Javascript is no different, the `type number` has a limit, where can be found using the `Number.MAX_SAFE_INTEGER` and `Number.MIN_SAFE_INTEGER`. For that reason, `BigInt` was created, it has a very rare use case, and probably you will not needed, but is good to know if has the opportunity. `Bigint` is represented by appending `n` at end. You can find more about in the (MDN Docs)[https://developer.mozilla.org/en-US/docs/Web/JavaScript/Data_structures#bigint_type]
+
+
+## type string
+
+Type string is related to textual content, can store anything as text. It is represented by double quotation marks `""`. It is one of the most used types in every programming language and has a lot of build in methods, specially in Javascript, we have `concat()`, `substring()`, `replace()`, `slice()` and many more.
+
+## type boolean
+
+Boolean is presented in most if not all programming languages. It represents **boolean values**, `true` or `false`. It's very useful for making logical operations `&&` and `||` returns boolean values, also they are useful for conditions, in `if,else`, `while`, etc.
+
+## type Symbol
+
+Did you know that Javascript has a `Symbol` type? It can be used to store values used for keys. They are guarantee to be unique. For that reason, can be a good solution for your problem.
+
+///// Need to be refined
+
+## type null
+
+Type `null` represents just one value: `null` what is the intentional absence of any value. It is also super important in Javascript and is used when you need a reference to a value but it does not have the value itself.
+
+## type undefined
+
+Type `undefined` different from `null` represents a non referenced value
+
+////
