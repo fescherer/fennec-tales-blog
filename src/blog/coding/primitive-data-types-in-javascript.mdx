@@ -1,0 +1,148 @@
+export const metadata = {
+  title: 'Primitive data types in JavaScript',
+  published_date: '2024-10-30T10:00:00.500Z',
+  updated_at: '2024-10-30T10:00:00.500Z',
+  image: '/article-images/coding/primitive-data-types-in-javascript/thumb.webp',
+  alt: 'Image showing a great title with some books and examples of the content of the article.',
+  video_url: '',
+  project_url: '',
+  figma_url: '',
+  github_url: '',
+  tags: ['javascript', 'variables', 'beginner'],
+  author: 'fescherer',
+  sources: [
+    {
+      date: '2024-10-30T10:00:00.500Z',
+      title: 'Mozilla Developer',
+      link: 'https://developer.mozilla.org',
+    },
+  ],
+}
+
+In every programming language you will find some primitives values. It's not different in JavaScript, we have 7- number, string, boolean, bigint, null, undefined and symbol. Every one having a different case usage. In this article I gonna show you every Javascript primitive values and its usage case, but first what is a primitive value?
+
+## Definition
+
+In Javascript, a data type is considered primitive value if immutable and is not an object and has no methods or properties. You can never change a primitive value in Javascript, for example:
+
+
+```js
+let a = 'hello'
+let b = a
+console.log(b) // "hello"
+
+b.substring(2) // "llo"
+console.log(b) // "hello"
+console.log(a) // "hello"
+
+let c = [3]
+let d = c
+c.push(1)
+console.log(c) // Array [ 3, 1 ]
+console.log(d) // Array [ 3, 1 ]
+```
+
+In the example above, we can never change the primitive value string *hello* no matter how many methods we do in *b*, but is not the case of array *c* and *d*, when we push item to *d*, automatically pushes to *c* too, so is mutable.
+
+Primitives values are super important to know, independently of the language used, every one has a critical importance and usage case. For this reason, we're gonna explain each one that exists in JavaScript.
+
+## type number
+
+In JavaScript, **Number** is a primitive data type used to represent numerical values. It stores 64-bit floating-point numbers following the IEEE 754 standard, which supports double-precision. This makes it versatile for handling integers as well as decimals, and it's the primary type for representing numbers in JavaScript.
+
+Number accepts almost all operators. An interesting fact is that JavaScript handles somethings that would be consider error in other programming languages, we will see more in the next topics.
+
+An important aspect of numbers in JavaScript is that when you perform an operation that is not possible, such attempting invalid operations between types (like multiplying strings), the result will be *NaN*, which stands for 'Not a Number' and indicates an error in the computation.
+
+```js
+const n = 1
+const n2 = 2
+
+console.log(n + n2) // 3
+console.log(n - n2) // -1
+console.log(n * n2) // 2
+console.log(n / n2) // 0.5
+console.log(n % n2) // 1
+console.log(n === n2) // false
+
+console.log('text' * 'text') // NaN
+```
+
+## type string
+
+A **String** is a sequence of characters used to represent text in JavaScript. It allows for the storage and manipulation of textual data, making it essential for handling words, sentences, and other character-based information. Strings have a wide range of use cases due to their versatility in representing and manipulating text, making them one of the most frequently used data types in JavaScript.
+
+JavaScript has a particularly behavior- If you use the sum operator with some string there will be no error as would happen in other programming languages, instead JavaScript handle this by transforming the result in a string by concatenating the values.
+
+```js
+const s = '1'
+const s2 = 'text'
+
+console.log(1 + s) //  11
+console.log(false + s2) // falsetext
+```
+
+## bigint
+
+**BigInt** is used to store integers beyond JavaScript's safe integer limit (Number.MAX_SAFE_INTEGER). While powerful for handling very large numbers, it is rarely needed in typical small-medium applications.
+
+```js
+const maxSafeNumber = Number.MAX_SAFE_INTEGER // 9007199254740991
+const beyondMaxN1 = maxSafeNumber + 1 // 9007199254740992
+const beyondMaxN2 = maxSafeNumber + 2 // 9007199254740992
+
+const bigN = 9007199254740991n
+const beyondMaxBigN = 9007199254740991n + 2n // 9007199254740993n
+```
+
+## boolean
+
+A **Boolean** is a logical data type that can only hold one of two values: *true* or *false*. It is commonly used in conditions and decision-making statements.
+
+Those values can be represented in other forms like binary, 1 represents true and 0 represents false. This means that, in Javascript you can make operations with those values.
+
+```js
+const isDeveloper = true
+const isLastType = false
+
+console.log(true + 2) // 3
+console.log(true - 2) // -1
+```
+
+## undefined
+
+**undefined** is a default value automatically assigned to variables that have been declared but not yet given a value, or to function parameters that have no corresponding arguments.
+
+```js
+let value
+const value2 = undefined
+```
+
+## symbol
+
+A **Symbol** is a unique and immutable primitive value that can be used as a key for properties in an object, ensuring property names do not conflict.
+
+```js
+const sym1 = Symbol()
+const sym2 = Symbol('desc')
+const sym3 = Symbol('desc')
+
+console.log(sym2 === sym3) // false
+```
+
+## null
+
+A **null** value represents a reference that intentionally points to a nonexistent or invalid object or address, indicating the absence of any value.
+
+In operations, you can treat null as 0 since many calculations can be performed by substituting null with 0 without affecting the outcome.
+
+```js
+const value = null
+
+console.log(2 + null) // 2
+console.log(2 * null) // 2
+```
+
+## Conclusion
+
+In this article we saw all the primitive data types that exists in JavaScript. This article was short, but I hope you like it. Have a nice day.  😎✨✨✨😎
