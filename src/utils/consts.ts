@@ -1,1 +1,1 @@
-export const PAGES_NUMBER = 6
+export const PAGES_NUMBER = 20
