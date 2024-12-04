@@ -1,7 +1,7 @@
 export const metadata = {
 title: 'Game Off 2024 Journey',
 published_date: '2024-11-01T10:00:00.500Z',
-updated_at: '2024-11-01T10:00:00.500Z',
+updated_at: '2024-12-04T10:00:00.500Z',
 image: 'https://github.com/fescherer/blog/assets/62115215/2449217e-9356-4815-a86c-bec219ba7630',
 alt: "Image containing the game off 2024 logo. It's an arcade machine most pinky colored and with a text below.",
 author: 'fescherer',
@@ -24,69 +24,63 @@ sources: [
   ],
 }
 
-A story about my journey through a new challenge- Game Off 2024. We gonna tell everything that we made to achieve our final product. Everyday updating with the news. Stay tunned! 😊
+Making games is hard, but making a game in a month is insane 🤯 I participated in Game Off 2024 and here you will find all my experiences, challenges and pain with a bonus of my first time experience using Unreal Engine 5.
 
-## Day 01 - 02
+## What is Game Off
 
-Those firsts days were reserved for planning the game. We had already thought about which game style would like, even before the game had started. So we take those days to     refine the idea and change little things to fit the theme - SECRETS.
-The game will be a manager clicker, where player would need to create recipes given by NPCs, very basic, but we need to think that we only have one month and have to do everything from graphic assets to song and music assets. This will be hard, but we are surly will be fun.
+Game Off is a annual game jam hosted by Lee Reilly and Github. At the start of November you were given a theme and use this as base to make a game. The event allow using any kind of tech, game engines or libraries. What is important is finish the game and stick to the jam's theme.
 
-## Day 03 - 04
+## A game developer planning
 
-After deciding which style the game will have, I finally started creating the project on Unreal and setting the camera. As I said before, the game will be like a clicker, so I had two options to make- First would create the full game as widgets in Unreal which would limit me a little bit in what I want to do, well, the second option would create the game in a top-down like perspective and make the character invisible, so would looks like those manager game, like Cities Skyline and other city building.
+One objective I give myself this year, was to create a nice game like I did last year in this same jam. Last time I started from zero and learned about Godot, I liked but there were some limitations I faced, most likely godot developers more experienced would have knew how to handle the situation, but I as a new developer got frustrated those times, and lost a lot of time trying to understand the Godot insights.
+Because of that, and also a new feeling of creating something in 3D, I decided to use something else than Godot, most between Unreal and Unity. Deciding to go for Unreal, because Unity despite being very good, I would need to learn another programming language, what is not the case with Unreal, because I already now a little bit of C++ and most important, the blueprints seems a lot easier than a whole new programming language like C#.
+In my free time, I started to learn more about Unreal, making a simple game to learn the basics. And there we are, November is here with the new edition of Game Off 2024.
 
-## Day 05
+## My first thoughts
 
-This day was more easy, I started to make some main assets, but quickly realize that somethings will not be possible or too difficult for me to handle in this short time, so I changed some plans and started smaller.
+In 2024, the theme was secret, could be anything related to this, even the acronyms SECRETS (For example Synchronized Events and Cryptic Riddles for Enigmatic Triggered Solutions), so the imagination go wild. But before the jam, I already had a crude base of what I want to do.
+I think everyone knows about Minecraft, this game was part of my life, and specially I liked to play with mods from the community, mods like IndustrialCraft, BuildCraft, ThermalExpansion, Botanica, and many others. But specially, my favorite mod by far was Thaumcraft, a magical-industrial mod that added new items, features, biomes and automation. Everything I wanted in a Minecraft mod, specially because the assets were very detailed and beautiful. But you see, in this mod there was a mechanic where you extract aspects from items, like a dirt would have aspect of Terra, or a clay would have aspect of Aqua and Terra. Those aspects could been stored in jar, where could be used to craft more advanced items. I wanted to get a similar idea for my game, probably with a Overcooked like system.
+The game would have a magical theme where you would extract essences from random items that would pass in a conveyor belt and then a client NPC would request a potion made by those essences. I love this idea and I will make something like this in the future, but the jam has the theme SECRETS, and how to adapt this idea for this theme?
 
-The basic idea is create a overcooked like game, but super simple and with a twist, instead of a restaurant making food, you will make potions with essences. You will have 5 essences types- Fire, Water, Earth, Magic and Disorder. Each potion will be made by merging two essences, and the combination will be discovered by player base on hints that the clients will say. They will come at random times and them make a dialog that contains the hint (This will be where we will fit the "SECRETS" jam's theme).
+## The creation of the core mechanic
 
-## Day 06
+The first day of November I was trying develop some idea to fit the theme in my game, but I was not satisfied, and even using ChatGPT to get more ideas, looked like I was not getting somewhere. But suddenly I remember seeing my brother playing a game called Paper's Please. I already knew how the game worked, and I do not know why, but I got a really great idea. What if the client NPC instead of telling in your face which potion it need, use a kind of riddle in the request? Yes, there is the theme SECRETS in action, was perfect. The only problem I already was in the 3th day and at first I wanted to make the graphics like Overcooked, I have already been doing some 3D work in Blender, but you see, I was alone with the project, making a full game, with music, modeling, assets, material, code, level design and everything in my free time was very unlikely to happen, so I need to simplify the scale.
 
-I started making the main mechanic of the game- Combining the essences to make a potion. So as this is my first game on Unreal, I was a little lost, so I stated very small- adding the text to ui and trying to change this base on click of some static mesh (This is a Unreal term, if you want me to make an article with the simplest terms of Unreal, mail me 😊).
+## From 3D to 2D
 
-<Img
-  src="/article-images/personal/game-off-2024-journey/day06.gif"
-  name="Change text on ui by clicking a button"
-  alt="Change text on ui by clicking a button"
-/>
-
-## Day 07 - 08
-
-In the day 07 I could not do so much because I was busy with work, so I did a lot in day 08. First, I needed a occlusion mask because the whole game will be running inside a building like a tavern, so I need the player to see through walls. I follow a very good tutorial about it and increase the details with a comment I saw here: [video link](https://www.youtube.com/watch?v=O6W7pLF2GwU) and the comment is from **@JAMbosco**. I just did not like how it glows so much that interferes into the objects color, but I will try to solve this later, most because I wanted to add the potion crafting system.
-
-Day 8 I also change the UI a lot, because I thought with myself and realize that the game will be almost click, so this mechanic has to be simple and fun to play, so I did some drawings and got the UI changed a lot and probably will change tomorrow too. But besides that, I also implement the potion selection logic before into this new UI.
+At this point I already had knew a lot in Unreal, and was very confident about my skills, but the fear of not being able to finish the game in time made me want to change my plans, and I remember a very great game called Cookie Clicker, which have, in my opinion, a great interface for a game if that many content, why not make something similar? I do not wanted a clicker game, but I wanted the interface look of Cookie Clicker, for this reason I started to draw some raw blocking design but I wouldn't even imagine that this would have nothing to do with the final project.
 
 <Img
-  src="/article-images/personal/game-off-2024-journey/day08.webp"
-  name="New UI elements"
-  alt="New UI elements"
+  src="/raw-draw-mystic-cauldron"
+  name="Raw draw of the interface"
+  alt="Raw draw of the interface"
 />
 
-## Day 09 -12
+## The feature eater
 
-I need to confess that I procrastinated a lot during this time, specially because I was tired from work and just wanted to watch One Piece theories videos, but even so, I also did a really great addition and a very necessary clean up
+At day 5, I already had realized that the scope of the game was too big for just me to handle in a month. For that reason, I started to remove some features like the conveyor belt and sticking more with the core mechanic- Player would have to guess what potion the client NPC wanted by it's hints. If you do not realized from the raw draw, I had a lot of unnecessary widgets that could be cut from the project.
+In the end I got a very minimalistic style that could be done easily in a month, and if left some time, I could improve by adding features like upgrades.
 
-First about the addition was the NPC dialog box that will have a random request for the player to craft. When doing this, I realize that my code was garbage, I did not plan good enough and was everything kinda messy. For that reason, I made a full clean up in everything I have done. From the essence selector to crafting station, and even the logic of the items. Now they are classified as S_Item, a structure that has name, sprite and everything that an item need and not just an Enum of what essences are needed. I made the items using something I never used: a Data Table, and is very easy and helpful, because I feel that if I need to add some different type of item, will not crash everything.
+## The game
 
-## Day 12 - 17
+Finally I had something. The core concept still remains- Players would guess what type of potion a NPC client want. I decided to go with 5 essences (Earth, Water, Fire, Disorder and Magic), and making a potion by adding two essences and one flavour(refreshing, sweet and spicy), the order would not matter, so Earth + Water, would get the same result as Water + Earth. This gives me a total of 10 different potions and more 5 because I wanted a double potion like Earth + Earth, total of 15 essences, so I would need to create at least 15 dialog, which seems too much, but is not, specially with the help of ChatGPT.
 
-I gotta admit I am a little late in what I've been planing. I a blink of eyes, we are already in half of the month, and I should have all the game ready and just do some optimizations, but I haven't and now, I need to compensate this in the last days. A project planning is difficult and you need to have your goals not just organized, but also realistic. I did not did this. But that is ok, because I already know how to compensate, and will be using free assets from the community.
+The roadmap stay like that- NPC came and asks for a potion, you as a player, need to select the right essences and then craft a potion. It will take some seconds to craft, and then you can verify with the NPC if is the correct one, if not, you can store for the next NPC or delete. After a successful request, you earn some money to spend in upgrades and after delivering all the potions from that level, you go to the next, where new potions will be asked.
 
-When I started the project, I wanted to do everything, from coding to music, modeling and assets 2D. That would be ok if the scale of my game wasn't that big and if I already knew how to do those things, but I am a starter in game development and learning all this is hard. But that's why I entered in this challenge. I will make this game no matter what and you can be sure that soon enough you will be playing Mystic Cauldron.
+<Img
+  src="/monster-button-3d"
+  name=""
+  alt="A very big wall populated with buttons"
+/>
 
-I started the day trying to build the project for the first time. Yes, I haven't build until now, I discovered this is a very bad practice because everything you do in Unreal, can cause a build error, which the log does not help too much. But fortunately the only error I got was:
-```
-LogCook: Error: GameDefaultMap contains a redirected reference '/Game/MainLevel'. The intended asset will fail to load in a packaged build. Select the intended asset again in Project Settings to fix this issue.
-```
-And this error is saying exactly what I need to do: Just reselect the level in the project settings. This was caused because they have the wrong reference, which I think was because I changed the location of the level, but I am not sure. What is important is that I made the my first build 🥳
+## Work in progress
 
-I also cleaned a specific widget from crafting station, because it has a LOT of logic inside, from the crafting to balcony, with a lot of event binding so I added some comments to remember this later.
+I started coding the project in the 8th day, which could be alarming, but I felt everything organized and ready to go. In the first days, I wanted to know, if with those features simplified, I could do a 3D game, so I sacrifice 2 days by making like a button monster and configuring the camera, but in the second day, I realized I was losing too much time in unnecessary things like the camera, so I went for my original plan of doing a 2D game. Unreal have a great system of interfaces called widgets or UMG, soon after, I already had learned will be way quicker than a 3D game, but I also realized that the assets would be made very soon or I would need to get from internet.
 
-At end, I added the remaining recipes in the data table for be ready to use in the NPC dialog logic I will do tomorrow.
+In the mean time, I was doing the code with mocked images, like white squares and colored circles and I had made my first part of the game- Essence selector.
 
-## Day 18
-
-I finally made the NPC request system, although need to add something else, like the  sprites and the complete quest system, I am more than happy to what I could do today.
-
-## Day 19
+<Img
+  src="/first-essence-selector"
+  name="Essence Selector"
+  alt="Square full of button circles that represents the essences"
+/>
