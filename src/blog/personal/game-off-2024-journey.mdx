@@ -77,10 +77,39 @@ The roadmap stay like that- NPC came and asks for a potion, you as a player, nee
 
 I started coding the project in the 8th day, which could be alarming, but I felt everything organized and ready to go. In the first days, I wanted to know, if with those features simplified, I could do a 3D game, so I sacrifice 2 days by making like a button monster and configuring the camera, but in the second day, I realized I was losing too much time in unnecessary things like the camera, so I went for my original plan of doing a 2D game. Unreal have a great system of interfaces called widgets or UMG, soon after, I already had learned will be way quicker than a 3D game, but I also realized that the assets would be made very soon or I would need to get from internet.
 
-In the mean time, I was doing the code with mocked images, like white squares and colored circles and I had made my first part of the game- Essence selector.
+In the mean time, I was doing the code with mocked images, like white squares and colored circles and I had made my first part of the game- Essence selector and I was ready for the next step, the crafting station, or so I thought 😰.
 
 <Img
   src="/first-essence-selector"
   name="Essence Selector"
   alt="Square full of button circles that represents the essences"
 />
+
+## My new nightmare- timers
+
+The crafting station would need to have the crafting part and the balcony part. I first made the crafting and was very easy to add the essences from the essence selector, but I never could image how hard would be to make the crafting part. If you do not remember, I had a plan of making the crafting some seconds long, so player would not spam potions, but for some reason I could not make the timer work properly and for worst I could not even debug that, because sometimes would work and sometimes not. I remember losing a LOT of time in this feature, I tried a lot of strategies, even recursion. But I always end in the same problem. Today I feel like I would suffered a lot less if I had read the full documentation. So if you are new to programming or want to get better, read the documentation, specially if is in a great organization and had lot of content, like the Unreal. But at this point I did not have time to read the full documentation and the page of timer was confusing to me.
+
+I decided to leave the bug and start to do something else, maybe in the future I could solve this.
+
+## From hell to heaven- Data Tables
+
+While I could not solve the bug, I started to make some changes in the main structures- You see, before, I had a enumeration for the essences and then when crafting, they need to look of each recipe to see what is right. I know the game has a small scale, but I wanted to learn the right way now, start my studies in what is called Data Tables, some beautiful and shiny solutions for my problem. You can think in it as a collection of structures, or objects in other programming languages. With that in my, I know if I want to add more potions or essences in the future, would be very easy.
+I want to take a few lines to explain how I did the logic of ids. First, every essence has a id, 1-Water, 2-Fire, 3-Earth, 4-Magic, 5-Disorder, but the potions has an id of a string of the ids that made that potion, for example, Pure water potion has an id of 1_1, the Water-Fire is 1_2, always registering the potion with the smaller essence id first than the greater one. With this, when searching for the specific potion, the code will always knew the right id, for example if I give essence magic and earth, the output will be 3_4, so just look for this id and nothing more.
+When researching about this, I also came along a very good strategy for a game with many crafts, like Minecraft. And is using a table for the items, and a separated table for the recipes, this makes code for organized and will be easier later if need to add more recipes for the same item. I know my game will not have more recipes in the future, so this is not a problem.
+Before going to the next point, I also want to say that I dropped the idea of flavours, I thought the game was good enough without them.
+
+## Thanks free assets
+
+I would never did the game in a month without them
+
+## Making more content
+
+- Crafting station upgrades
+not really  great`
+
+## Last bug corrections
+- timer
+- dialog out of the scale
+- level
+- crafting station upgrades
+
