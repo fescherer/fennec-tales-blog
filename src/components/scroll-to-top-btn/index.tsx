@@ -7,7 +7,7 @@ export function ScrollToTopBtn() {
 
   if (value !== 0)
     return (
-      <div className="fixed bottom-5 right-5 z-50 flex gap-4 rounded p-1 text-accent backdrop-blur">
+      <div className="fixed bottom-5 right-5 z-50 flex gap-4 rounded-sm p-1 text-accent backdrop-blur-sm">
         <button
           aria-label="Scroll to top of page"
           onClick={() => window.scroll(0, 0)}

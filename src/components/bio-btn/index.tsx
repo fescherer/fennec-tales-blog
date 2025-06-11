@@ -5,7 +5,7 @@ type LinkType = LinkProps & AnchorHTMLAttributes<any>
 
 export function BioBtn({ children, href, ...props }: PropsWithChildren<LinkType>) {
   return (
-    <Link target="_blank" href={href} {...props} className="flex w-full gap-4 rounded border border-primary-border p-4 font-medium transition-all hover:border-accent">
+    <Link target="_blank" href={href} {...props} className="flex w-full gap-4 rounded-sm border border-primary-border p-4 font-medium transition-all hover:border-accent">
       {children}
     </Link>
   )

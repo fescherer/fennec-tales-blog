@@ -1,7 +1,12 @@
 {
   "editor.wordWrap": "on",
   "errorLens.gutterIconsEnabled": true,
-  "colorize.languages": ["typescript", "javascript", "css", "scss"],
+  "colorize.languages": [
+    "typescript",
+    "javascript",
+    "css",
+    "scss"
+  ],
   "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
   "workbench.colorCustomizations": {
@@ -14,7 +19,9 @@
   "editor.codeActionsOnSave": {
     "source.fixAll.eslint": "explicit"
   },
-  "eslint.validate": ["javascript"],
+  "eslint.validate": [
+    "javascript"
+  ],
   "prettier.enable": false,
   "cSpell.words": [
     "Botanica",

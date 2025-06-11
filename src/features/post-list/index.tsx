@@ -38,7 +38,7 @@ export async function PostList({ type, posts, tag, query, page }: PostListProps)
           <SearchNotFound posts={posts} />
           )
         : (
-          <div className="m-auto grid max-w-[3000px] grid-cols-[repeat(auto-fill,_minmax(315px,_1fr))] gap-4">
+          <div className="m-auto grid max-w-[3000px] grid-cols-[repeat(auto-fill,minmax(315px,1fr))] gap-4">
             {
         postsByPage.map(post => (
           <PostCard key={post.slug} post={post} />

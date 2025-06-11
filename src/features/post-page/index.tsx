@@ -20,10 +20,10 @@ export function PostPage({ post }: PropsWithPost) {
 
         <div
           style={{ backgroundImage: `url(${post.image})` }}
-          className="absolute left-0 top-0 -z-10 h-1/2 w-full bg-cover blur-sm brightness-75"
+          className="absolute left-0 top-0 -z-10 h-1/2 w-full bg-cover blur-xs brightness-75"
         />
 
-        <div className="relative mt-12 flex flex-col-reverse gap-8 rounded bg-primary p-4 lg:flex-row">
+        <div className="relative mt-12 flex flex-col-reverse gap-8 rounded-sm bg-primary p-4 lg:flex-row">
           <article className="space-y-10">
             <PostHeader post={post} />
 

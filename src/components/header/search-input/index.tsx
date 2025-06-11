@@ -30,11 +30,11 @@ export function SearchInput({ className }: PropsWithClassName) {
   //   replace(`${pathname}?${params.toString()}`)
   // }
   return (
-    <form className={`${className} w-full rounded-full border bg-secondary pr-2 transition-all has-[:focus]:border-accent `} onSubmit={e => e.preventDefault()}>
+    <form className={`${className} w-full rounded-full border bg-secondary pr-2 transition-all has-focus:border-accent `} onSubmit={e => e.preventDefault()}>
       <label htmlFor="default-search " className="mui-icon-filled pl-2">search</label>
 
       <div className="my-1 flex w-full gap-1 bg-secondary">
-        <input onChange={handleSearch} type="search" className="w-full bg-secondary !ring-transparent" id="default-search" defaultValue={inputValue} placeholder="Search..." />
+        <input onChange={handleSearch} type="search" className="w-full bg-secondary ring-transparent!" id="default-search" defaultValue={inputValue} placeholder="Search..." />
       </div>
 
     </form>

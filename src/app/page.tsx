@@ -6,8 +6,8 @@ import { getPostsData, sortPosts } from '@/utils/post-functions'
 import { Suspense } from 'react'
 
 export default async function Home({ searchParams }: PropsWithSearchProps) {
-  const query = searchParams?.query || ''
-  const currentPage = Number(searchParams?.page) || 0
+  // const query = (await searchParams)?.query || ''
+  // const currentPage = Number(searchParams?.page) || 0
 
   const posts = (await getPostsData()).sort(sortPosts)
 
@@ -16,8 +16,8 @@ export default async function Home({ searchParams }: PropsWithSearchProps) {
       <div className="flex gap-2">
         <Menu className="hidden md:block" />
 
-        <Suspense key={query + currentPage} fallback={<span>Loading</span>}>
-          <PostList query={searchParams?.query} page={searchParams?.page} posts={posts} type="" />
+        <Suspense fallback={<span>Loading</span>}>
+          <PostList query={""} page={""} posts={posts} type="" />
         </Suspense>
       </div>
     </ContentWrapper>

@@ -16,7 +16,7 @@ export function SearchNotFound({ posts }: SearchNotFoundProps) {
       <h2 className="text-center text-3xl font-medium text-primary-label-primary">Sorry, no articles were found</h2>
       <h2 className="text-center text-2xl text-primary-label-secondary">But you can take a look at our recent articles</h2>
 
-      <div className="m-auto mt-10 grid max-w-[1200px] grid-cols-[repeat(auto-fill,_minmax(315px,_1fr))] gap-4">
+      <div className="m-auto mt-10 grid max-w-[1200px] grid-cols-[repeat(auto-fill,minmax(315px,1fr))] gap-4">
         <PostCard key={posts[0].slug} post={posts[0]} />
         <PostCard key={posts[1].slug} post={posts[1]} />
         <PostCard key={posts[2].slug} post={posts[2]} />
