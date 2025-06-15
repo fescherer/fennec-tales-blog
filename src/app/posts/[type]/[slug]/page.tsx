@@ -15,7 +15,7 @@ type SlugPageParams = {
 }
 
 type SlugPageProps = {
-  params: SlugPageParams
+  params: Promise<SlugPageParams>
 }
 
 interface PageProps {
@@ -25,79 +25,80 @@ interface PageProps {
   }
 }
 
-export async function generateMetadata(
-  { params: { slug, type } }: PageProps,
-) {
-  const data = await getPostData(type, slug)
+// export async function generateMetadata(
+//   { params: { slug, type } }: PageProps,
+// ) {
+//   const data = await getPostData(type, slug)
 
-  return {
-    title: data.title,
-    alternates: {
-      canonical: `${METADATA.canonical_url}/posts/${type}/${slug}`,
-    },
+//   return {
+//     title: data.title,
+//     alternates: {
+//       canonical: `${METADATA.canonical_url}/posts/${type}/${slug}`,
+//     },
 
-    openGraph: {
-      title: `${data.title} | ${METADATA.title}`,
-      description: data.content.slice(0, 90).trim(),
-      url: `${METADATA.canonical_url}/posts/${type}/${slug}`,
-      siteName: METADATA.title,
-      images: [
-        {
-          url: data.image,
-          alt: data.alt,
-          width: 1300,
-          height: 630,
-        },
-      ],
-      locale: 'en',
-      type: 'article',
-    },
+//     openGraph: {
+//       title: `${data.title} | ${METADATA.title}`,
+//       description: data.content.slice(0, 90).trim(),
+//       url: `${METADATA.canonical_url}/posts/${type}/${slug}`,
+//       siteName: METADATA.title,
+//       images: [
+//         {
+//           url: data.image,
+//           alt: data.alt,
+//           width: 1300,
+//           height: 630,
+//         },
+//       ],
+//       locale: 'en',
+//       type: 'article',
+//     },
 
-    authors: AUTHORS_DATA.map(author => ({ name: author.full_name, url: author.profiles.find(profile => profile.id === 'profile')?.url || '' })),
-  }
-}
+//     authors: AUTHORS_DATA.map(author => ({ name: author.full_name, url: author.profiles.find(profile => profile.id === 'profile')?.url || '' })),
+//   }
+// }
 
-/**
- * return all possible blogId values in an array like [{blogId: 'first_blog'}, {blogId: 'second_blog'}]
- */
-export function generateStaticParams() {
-  const blogPosts = getPostNames()
-  return blogPosts
-}
+// /**
+//  * return all possible blogId values in an array like [{blogId: 'first_blog'}, {blogId: 'second_blog'}]
+//  */
+// export function generateStaticParams() {
+//   const blogPosts = getPostNames()
+//   return blogPosts
+// }
 
-function getJSONLD(doc: IPost, type: string, slug: string) {
-  return getArticleJSONLD({
-    '@type': 'Article',
-    'headline': doc.title,
-    'url': `${METADATA.canonical_url}/posts/${type}/${slug}`,
-    'datePublished': doc.published_date,
-    'dateModified': doc.updated_at,
-    'image': {
-      '@type': 'ImageObject',
-      'url': doc.image,
-      'width': `${METADATA.thumb.width}px`,
-      'height': `${METADATA.thumb.height}px`,
-    },
-    'keywords': doc.tags,
-    'description': doc.content.slice(0, 90).trim(),
-    'mainEntityOfPage': {
-      '@type': 'WebPage',
-      '@id': `${METADATA.canonical_url}/posts/${type}/${slug}`,
-    },
-    'author': {
-      '@type': 'Person',
-      'name': doc.author,
-    },
-    'publisher': publisherJSONLD,
-  })
-}
+// function getJSONLD(doc: IPost, type: string, slug: string) {
+//   return getArticleJSONLD({
+//     '@type': 'Article',
+//     'headline': doc.title,
+//     'url': `${METADATA.canonical_url}/posts/${type}/${slug}`,
+//     'datePublished': doc.published_date,
+//     'dateModified': doc.updated_at,
+//     'image': {
+//       '@type': 'ImageObject',
+//       'url': doc.image,
+//       'width': `${METADATA.thumb.width}px`,
+//       'height': `${METADATA.thumb.height}px`,
+//     },
+//     'keywords': doc.tags,
+//     'description': doc.content.slice(0, 90).trim(),
+//     'mainEntityOfPage': {
+//       '@type': 'WebPage',
+//       '@id': `${METADATA.canonical_url}/posts/${type}/${slug}`,
+//     },
+//     'author': {
+//       '@type': 'Person',
+//       'name': doc.author,
+//     },
+//     'publisher': publisherJSONLD,
+//   })
+// }
 
-export default async function SlugPage({ params: { slug, type } }: SlugPageProps) {
+export default async function SlugPage({ params }: SlugPageProps) {
+  const { slug, type } = await params
   const post = await getPostData(type, slug)
 
   return (
     <ContentWrapper isArticle>
-      {JSONLD(getJSONLD(post, type, slug))}
+      {/* {JSONLD(getJSONLD(post, type, slug))} */}
       <PostPage post={post} />
     </ContentWrapper>
   )
