@@ -1,5 +1,4 @@
 import { PropsWithClassName } from '@/@types/classname'
-import { Separator } from '../separator'
 
 export function Menu({ className }: PropsWithClassName) {
   const a = 1
@@ -12,12 +11,12 @@ export function Menu({ className }: PropsWithClassName) {
         <span>About us</span>
         <span>Services</span>
         <span>Portifolio</span>
-        <Separator layer="primary" className="my-2" />
+        <div className="my-2 divider" />
         <span>NEW VIDEO preview from channel</span>
         <span>new short video preview</span>
-        <Separator layer="primary" className="my-2" />
+        <div className="my-2 divider" />
         <span>social medias</span>
-        <Separator layer="primary" className="my-2" />
+        <div className="my-2 divider" />
         <span>Saved articles localstorage</span>
         <span>COnfig- theme</span>
         <span>Notifications- news about the blog - commits, pr etc</span>

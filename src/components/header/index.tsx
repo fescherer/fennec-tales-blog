@@ -11,7 +11,7 @@ type HeaderProps = {
 
 export function Header({ isArticle }: HeaderProps) {
   return (
-    <header className="fixed z-50 w-full bg-primary p-2 md:p-4">
+    <header className="fixed z-50 w-full bg-base-200 p-2 md:p-4">
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center gap-1">
           <MenuBtn />
@@ -21,13 +21,13 @@ export function Header({ isArticle }: HeaderProps) {
           </Link>
         </div>
 
-        {!isArticle && <SearchInput className="hidden items-center md:flex md:w-64" />}
+        {/* {!isArticle && <SearchInput className="hidden items-center md:flex md:w-64" />} */}
         {/* <div className="flex items-center gap-1">
           <ThemeBtn />
         </div> */}
       </div>
 
-      {!isArticle && <SearchInput className="my-2 flex w-full items-center md:hidden md:w-1 " />}
+      {/* {!isArticle && <SearchInput className="my-2 flex w-full items-center md:hidden md:w-1 " />} */}
     </header>
   )
 }

@@ -5,7 +5,6 @@ import { DetailedHTMLProps, ImgHTMLAttributes } from 'react'
 import PrimitiveLink from 'next/link'
 import { slugyfy } from './utils/slugfy'
 import { Pre, Link } from './components'
-import { Separator } from './components/separator'
 
 interface IImg extends DetailedHTMLProps<ImgHTMLAttributes<HTMLImageElement>, HTMLImageElement> {
   source?: string
@@ -51,7 +50,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <p className="my-3 text-justify leading-normal tracking-wider text-primary-label-secondary" {...props}>{children}</p>
     ),
     hr: ({ children, ...props }: any) => (
-      <Separator {...props} layer="primary">{children}</Separator>
+      <div className='divider' {...props}>{children}</div>
     ),
     th: ({ children, ...props }: any) => (
       <th className="border border-secondary bg-secondary text-center" {...props}>

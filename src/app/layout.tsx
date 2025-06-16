@@ -20,7 +20,7 @@ export default function RootLayout({ children }: PropsWithChildren) {
         />
       </head>
 
-      <body className={`${montserrat.className} flex size-full min-h-screen flex-col bg-primary text-base text-primary-label-primary`}>
+      <body className={`${montserrat.className} flex size-full min-h-screen flex-col bg-base-300 text-base text-primary-label-primary`}>
         <ProgressBarProvider>
           {children}
           <Footer />

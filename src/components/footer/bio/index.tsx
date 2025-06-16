@@ -76,9 +76,7 @@ export function Bio() {
       <p className="max-w-prose text-sm text-secondary-label-secondary">{DATA.company_bio}</p>
 
       <div className="flex flex-wrap justify-center gap-4">
-        <Tooltip tooltip="Subscribe to RSS">
-          <Link className="mui-icon-filled" aria-label="Go to RSS's author" href="/feed.xml">rss_feed</Link>
-        </Tooltip>
+
 
         {
           links.map(link => (
