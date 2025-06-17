@@ -14,9 +14,9 @@ export function Header({ isArticle }: HeaderProps) {
     <header className="fixed z-50 w-full bg-base-200 p-2 md:p-4">
       <div className="flex w-full items-center justify-between">
         <div className="flex items-center gap-1">
-          <MenuBtn />
+          {/* <MenuBtn /> */}
 
-          <Link href="/" className="scale-75">
+          <Link href="/" className="scale-75 hover:scale-[85%] transition-all">
             <LogoIcon />
           </Link>
         </div>
