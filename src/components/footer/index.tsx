@@ -8,8 +8,8 @@ import { Link } from '../link'
 
 export function Footer() {
   return (
-    <div className='bg-neutral'>
-      <footer className="text-neutral-content p-10 m-auto flex-col flex">
+    <div className='bg-base-200'>
+      <footer className="text-base-content p-10 m-auto flex-col flex">
         <div className='footer sm:footer-horizontal my-6 m-auto max-w-6xl'>
           <aside className='max-w-96'>
             <LogoIcon />
