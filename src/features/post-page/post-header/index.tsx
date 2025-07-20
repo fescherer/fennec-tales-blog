@@ -15,7 +15,7 @@ export function PostHeader({ post }: PropsWithPost) {
         width={853}
         src={post.image}
         quality={100}
-        className="animate__zoomIn animate__animated mx-auto rounded-lg bg-secondary pb-8"
+        className="animate__zoomIn animate__animated mx-auto rounded-lg bg-primary pb-8"
       />
     </div>
   )

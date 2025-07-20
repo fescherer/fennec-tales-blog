@@ -53,7 +53,7 @@ export function useMDXComponents(components: MDXComponents): MDXComponents {
       <div className='divider' {...props}>{children}</div>
     ),
     th: ({ children, ...props }: any) => (
-      <th className="border border-secondary bg-secondary text-center" {...props}>
+      <th className="border border-secondary bg-primary text-center" {...props}>
         {children}
       </th>
     ),

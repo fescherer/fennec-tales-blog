@@ -30,7 +30,7 @@ export function PostTableOfContentList({ list }: PostIndexListProps) {
           target="_self"
           href={`#${slugyfy(heading.title)}`}
           key={heading.title}
-          className={`p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary ${getStyleForHeading(heading.level)}`}
+          className={`p-2 transition-all hover:bg-primary hover:text-secondary-label-primary ${getStyleForHeading(heading.level)}`}
         >
           {heading.title}
         </Link>

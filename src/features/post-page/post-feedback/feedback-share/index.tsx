@@ -63,7 +63,7 @@ export function FeedbackShare({ post }: PropsWithPost) {
       {
         links.map(link => (
           <Tooltip key={link.id} tooltip={link.name}>
-            <Link className="rounded p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary" rel="noopener" target="_blank" href={link.link} title={link.name}>{link.icon}</Link>
+            <Link className="rounded p-2 transition-all hover:bg-primary hover:text-secondary-label-primary" rel="noopener" target="_blank" href={link.link} title={link.name}>{link.icon}</Link>
           </Tooltip>
         ))
       }

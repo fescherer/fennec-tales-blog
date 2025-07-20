@@ -33,9 +33,9 @@ export function Pagination({ posts }: PaginationProps) {
     <>
       {posts.length > PAGES_NUMBER && (
         <div className="mt-8 flex items-center justify-end gap-2">
-          {/* <button onClick={() => setCurrentPage(prev => prev - 1)} disabled={currentPage === 0} type="button" className="hover:enabled:text-on-layer-0-l1 mui-icon-filled rounded-full transition-all disabled:cursor-not-allowed disabled:opacity-30">chevron_left</button> */}
-          {/* {totalPages.map(page => <button onClick={() => createPageURL(page)} type="button" className={`flex size-8 items-center justify-center rounded-full transition-all hover:bg-accent ${currentPage === page ? 'bg-accent text-accent-label-primary' : ''}`} key={page}>{page + 1}</button>)} */}
-          {/* <button onClick={() => setCurrentPage(prev => prev + 1)} disabled={currentPage === totalPages.length - 1} type="button" className="hover:enabled:text-on-layer-0-l1 mui-icon-filled rounded-full transition-all disabled:cursor-not-allowed disabled:opacity-30">chevron_right</button> */}
+          {/* <button onClick={() => setCurrentPage(prev => prev - 1)} disabled={currentPage === 0} type="button" className="hover:enabled:text-on-layer-0-l1 rounded-full transition-all disabled:cursor-not-allowed disabled:opacity-30"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round"><path d="m15 18-6-6 6-6"/></svg></button>
+          {totalPages.map(page => <button onClick={() => createPageURL(page)} type="button" className={`flex size-8 items-center justify-center rounded-full transition-all hover:bg-accent ${currentPage === page ? 'bg-accent text-accent-label-primary' : ''}`} key={page}>{page + 1}</button>)}
+          <button onClick={() => setCurrentPage(prev => prev + 1)} disabled={currentPage === totalPages.length - 1} type="button" className="hover:enabled:text-on-layer-0-l1 rounded-full transition-all disabled:cursor-not-allowed disabled:opacity-30"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" strokeLinecap="round" strokeLinejoin="round"><path d="m9 18 6-6-6-6"/></svg></button> */}
         </div>
       )}
     </>
