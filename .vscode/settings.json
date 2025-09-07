@@ -1,12 +1,6 @@
 {
   "editor.wordWrap": "on",
   "errorLens.gutterIconsEnabled": true,
-  "colorize.languages": [
-    "typescript",
-    "javascript",
-    "css",
-    "scss"
-  ],
   "javascript.autoClosingTags": true,
   "typescript.autoClosingTags": true,
   "workbench.colorCustomizations": {
@@ -21,11 +15,5 @@
   },
   "eslint.validate": [
     "javascript"
-  ],
-  "prettier.enable": false,
-  "cSpell.words": [
-    "Botanica",
-    "Holambra",
-    "Thaumcraft"
   ],
 }
