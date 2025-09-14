@@ -18,7 +18,7 @@ Blog Fennec Tales Studio
 
 ## 📕 About
 
-This blog contains articles about tech, art and game development, feel free to explore and leave your feedback :D
+This blog contains articles about tech, art and game development, feel free to explore and leave your feedback!
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
