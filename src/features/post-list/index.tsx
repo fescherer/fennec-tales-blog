@@ -30,26 +30,20 @@ export async function PostList({ type, posts, tag, query, page }: PostListProps)
 
   return (
     <div className="relative w-[calc(100%-208px)] flex-1">
-      <FilterTags alltags={alltags} type={type} tag={tag} />
-      {JSONLD<WebSite>(websiteJSONLD)}
+      {/* <FilterTags alltags={alltags} type={type} tag={tag} />
+      {JSONLD<WebSite>(websiteJSONLD)} */}
 
-      {!filteredPosts.length
-        ? (
-          <SearchNotFound posts={posts} />
-          )
-        : (
-          <div className="m-auto grid max-w-[3000px] grid-cols-[repeat(auto-fill,_minmax(315px,_1fr))] gap-4">
-            {
-        postsByPage.map(post => (
-          <PostCard key={post.slug} post={post} />
-        ))
+      {!filteredPosts.length && <SearchNotFound posts={posts} />}
+
+      {filteredPosts.length &&
+        <div className="m-auto grid max-w-[2000px] grid-cols-[repeat(auto-fill,minmax(340px,1fr))] gap-6 mt-12">
+          {
+            postsByPage.map(post => (
+              <PostCard key={post.slug} post={post} />
+            ))
+          }
+        </div>
       }
-          </div>
-          )}
-
-      <Suspense key="pagination">
-        <Pagination posts={filteredPosts} />
-      </Suspense>
     </div>
   )
 }

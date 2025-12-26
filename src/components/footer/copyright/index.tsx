@@ -6,7 +6,7 @@ export function Copyright() {
   const today = new Date()
 
   return (
-    <div className="m-auto my-6 flex max-w-screen-lg flex-col items-center">
+    <div className="m-auto my-6 flex max-w-(--breakpoint-lg) flex-col items-center">
       <small>
         Copyright © 🞄
         {`${initialDate.getFullYear().toString()} - ${today.getFullYear().toString()}`}

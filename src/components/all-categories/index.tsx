@@ -15,7 +15,7 @@ export async function AllCategories({ selectedCategory }: AllCategoriesProps) {
         {allcategories.map(category => (
           <Link
             key={category}
-            className={`p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary ${selectedCategory === category ? 'font-bold' : ''}`}
+            className={`p-2 transition-all hover:bg-primary hover:text-secondary-label-primary ${selectedCategory === category ? 'font-bold' : ''}`}
             aria-label={`Remove category filter for ${category}`}
             target="_self"
             href={category === selectedCategory ? '/' : `/posts/${category}`}

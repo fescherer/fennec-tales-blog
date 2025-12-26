@@ -37,7 +37,7 @@ export function PostAuthor({ post }: PropsWithPost) {
             <div className="flex items-center py-4">
               {author.profiles.map(social => (
                 <Tooltip key={social.id} tooltip={social.name}>
-                  <Link className="rounded p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary" rel="noopener" target="_blank" href={social.url} title={social.name}><SocialIcon id={social.id as any} /></Link>
+                  <Link className="rounded p-2 transition-all hover:bg-primary hover:text-secondary-label-primary" rel="noopener" target="_blank" href={social.url} title={social.name}><SocialIcon id={social.id as any} /></Link>
                 </Tooltip>
               ))}
             </div>

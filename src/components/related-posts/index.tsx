@@ -19,9 +19,9 @@ export async function RelatedPosts({ post, orientation = 'vertical' }: RelatedPo
       <div className={`flex ${orientation === 'vertical' ? 'flex-col' : 'flex-row'}`}>
         {
           recommendedArticles.map(relatedPost => (
-            <Link href={`/posts/${relatedPost.post.category}/${relatedPost.post.slug}`} target="_self" key={relatedPost.id} className={`flex gap-1 p-2 transition-all hover:bg-secondary hover:text-secondary-label-primary ${orientation === 'vertical' ? 'flex-row' : 'flex-col'}`}>
+            <Link href={`/posts/${relatedPost.post.category}/${relatedPost.post.slug}`} target="_self" key={relatedPost.id} className={`flex gap-1 p-2 transition-all hover:bg-primary hover:text-secondary-label-primary ${orientation === 'vertical' ? 'flex-row' : 'flex-col'}`}>
               <div>
-                <Image src={relatedPost.post.image} alt={relatedPost.post.title} width={720} height={404} className={`bg-secondary bg-no-repeat object-contain ${orientation === 'vertical' ? 'h-12' : ''}`} />
+                <Image src={relatedPost.post.image} alt={relatedPost.post.title} width={720} height={404} className={`bg-primary bg-no-repeat object-contain ${orientation === 'vertical' ? 'h-12' : ''}`} />
               </div>
 
               <div title={relatedPost.post.title} className="max-w-52">

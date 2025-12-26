@@ -7,14 +7,14 @@ export function ScrollToTopBtn() {
 
   if (value !== 0)
     return (
-      <div className="fixed bottom-5 right-5 z-50 flex gap-4 rounded p-1 text-accent backdrop-blur">
+      <div className="fixed bottom-5 right-5 z-50 flex gap-4 rounded-sm p-1 text-accent backdrop-blur-sm">
         <button
           aria-label="Scroll to top of page"
           onClick={() => window.scroll(0, 0)}
           type="button"
-          className="mui-icon-filled text-4xl transition-all hover:accent-accent-active"
+          className="text-4xl transition-all text-primary hover:text-accent cursor-pointer"
         >
-          arrow_circle_up
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" ><circle cx="12" cy="12" r="10" /><path d="m8 14 4-4 4 4" /></svg>
         </button>
       </div>
     )
